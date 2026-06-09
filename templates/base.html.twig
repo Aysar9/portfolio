@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Aysar Alatrash{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    {% block stylesheets %}
+        {{ importmap() }}
+    {% endblock %}
+</head>
+<body class="bg-[#FAFAF9] text-[#1A1A1A] antialiased" style="font-family: 'Inter', sans-serif;">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+    <header class="border-b border-[#E5E7EB]">
+        <nav class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="{{ path('app_home') }}" class="text-lg font-semibold tracking-tight" style="font-family: 'Sora', sans-serif;">
+                Aysar Alatrash
+            </a>
+            <div class="flex gap-6 text-sm text-[#6B7280]">
+                <a href="{{ path('app_home') }}" class="hover:text-[#3730A3] transition-colors">Start</a>
+                <a href="#projekte" class="hover:text-[#3730A3] transition-colors">Projekte</a>
+                <a href="#kontakt" class="hover:text-[#3730A3] transition-colors">Kontakt</a>
+            </div>
+        </nav>
+    </header>
 
-        {% set frankenphpHotReload = app.request.server.get('FRANKENPHP_HOT_RELOAD') %}
-        {% if frankenphpHotReload %}
-        <meta name="frankenphp-hot-reload:url" content="{{ frankenphpHotReload }}">
-        <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
-        <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
-        {% endif %}
-    </head>
-    <body>
+    <main>
         {% block body %}{% endblock %}
-    </body>
+    </main>
+
+    <footer class="border-t border-[#E5E7EB] mt-24">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-sm text-[#6B7280] flex justify-between">
+            <span>© {{ "now"|date("Y") }} Aysar Alatrash</span>
+            <span>Schwedt, Deutschland</span>
+        </div>
+    </footer>
+
+</body>
 </html>
