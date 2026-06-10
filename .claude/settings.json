@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php bin/console debug:translation de --only-missing)",
+      "Bash(php bin/console debug:translation en --only-missing)"
+    ]
+  }
+}

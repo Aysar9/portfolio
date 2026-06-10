@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="{{ app.request.locale }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% block title %}Aysar Alatrash{% endblock %}</title>
 
     {# SEO #}
-    <meta name="description" content="{% block meta_description %}Full-Stack Entwickler mit Schwerpunkt PHP und Symfony. Ich entwickle und betreibe produktive Web-Anwendungen.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{{ 'meta.description'|trans }}{% endblock %}">
     <meta name="author" content="Aysar Alatrash">
 
     {# Open Graph (LinkedIn, Facebook, WhatsApp) #}
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Aysar Alatrash – Full-Stack Entwickler">
-    <meta property="og:description" content="PHP / Symfony Entwickler. Produktive Web-Anwendungen vom Backend bis zum Frontend.">
+    <meta property="og:title" content="{{ 'meta.og_title'|trans }}">
+    <meta property="og:description" content="{{ 'meta.og_description'|trans }}">
     <meta property="og:url" content="https://aysar-alatrash.de">
-    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale" content="{{ app.request.locale == 'en' ? 'en_US' : 'de_DE' }}">
 
     {# Twitter / X #}
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Aysar Alatrash – Full-Stack Entwickler">
-    <meta name="twitter:description" content="PHP / Symfony Entwickler. Produktive Web-Anwendungen vom Backend bis zum Frontend.">
-    
+    <meta name="twitter:title" content="{{ 'meta.og_title'|trans }}">
+    <meta name="twitter:description" content="{{ 'meta.og_description'|trans }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -31,17 +31,26 @@
 <body class="bg-[#FAFAF9] text-[#1A1A1A] antialiased" style="font-family: 'Inter', sans-serif;">
 
     <header class="border-b border-[#E5E7EB]">
-        <nav class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
-            <a href="{{ path('app_home') }}" class="text-lg font-semibold tracking-tight" style="font-family: 'Sora', sans-serif;">
-                Aysar Alatrash
-            </a>
-            <div class="flex gap-6 text-sm text-[#6B7280]">
-                <a href="{{ path('app_home') }}" class="hover:text-[#3730A3] transition-colors">Start</a>
-                <a href="{{ path('app_about') }}" class="hover:text-[#3730A3] transition-colors">Über mich</a>
-                <a href="{{ path('app_projekte') }}" class="hover:text-[#3730A3] transition-colors">Projekte</a>
-                <a href="{{ path('app_kontakt') }}" class="hover:text-[#3730A3] transition-colors">Kontakt</a>
-            </div>
-        </nav>
+    <nav class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="{{ path('app_home') }}" class="text-lg font-semibold tracking-tight" style="font-family: 'Sora', sans-serif;">
+            Aysar Alatrash
+        </a>
+        <div class="flex items-center gap-6 text-sm text-[#6B7280]">
+            <a href="{{ path('app_home') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.start'|trans }}</a>
+            <a href="{{ path('app_about') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.about'|trans }}</a>
+            <a href="{{ path('app_projekte') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.projekte'|trans }}</a>
+            <a href="{{ path('app_kontakt') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.kontakt'|trans }}</a>
+
+            {# Language toggle #}
+            <span class="flex gap-1 border-l border-[#E5E7EB] pl-4">
+                <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'de'})) }}"
+                class="{{ app.request.locale == 'de' ? 'text-[#3730A3] font-semibold' : 'hover:text-[#3730A3]' }} transition-colors">DE</a>
+                <span>/</span>
+                <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}"
+                class="{{ app.request.locale == 'en' ? 'text-[#3730A3] font-semibold' : 'hover:text-[#3730A3]' }} transition-colors">EN</a>
+            </span>
+        </div>
+    </nav>
     </header>
 
     <main>
@@ -51,7 +60,7 @@
     <footer class="border-t border-[#E5E7EB] mt-24">
         <div class="max-w-4xl mx-auto px-6 py-8 text-sm text-[#6B7280] flex justify-between">
             <span>© {{ "now"|date("Y") }} Aysar Alatrash</span>
-            <span>Schwedt, Deutschland</span>
+            <span>{{ 'layout.location'|trans }}</span>
         </div>
     </footer>
 

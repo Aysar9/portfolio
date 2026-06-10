@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Kontakt – Aysar Alatrash{% endblock %}
+{% block title %}{{ 'kontakt.title'|trans }}{% endblock %}
 
 {% block body %}
 <section class="max-w-4xl mx-auto px-6 pt-20 pb-16">
-    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">Kontakt</p>
+    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">{{ 'kontakt.label'|trans }}</p>
     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-8" style="font-family: 'Sora', sans-serif;">
-        Lassen Sie uns sprechen
+        {{ 'kontakt.heading'|trans }}
     </h1>
     <p class="text-lg text-[#374151] leading-relaxed max-w-2xl mb-10">
-        Ich bin offen für neue Herausforderungen als Full-Stack Entwickler.
-        Erreichen Sie mich am besten per E-Mail oder über die folgenden Kanäle.
+        {{ 'kontakt.intro'|trans }}
     </p>
 
     <div class="space-y-4 max-w-md">

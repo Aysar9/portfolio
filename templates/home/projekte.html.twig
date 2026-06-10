@@ -1,25 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projekte – Aysar Alatrash{% endblock %}
+{% block title %}{{ 'projekte.title'|trans }}{% endblock %}
 
 {% block body %}
 <section class="max-w-4xl mx-auto px-6 pt-20 pb-16">
-    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">Projekte</p>
+    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">{{ 'projekte.label'|trans }}</p>
     <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-12" style="font-family: 'Sora', sans-serif;">
-        Ausgewählte Arbeiten
+        {{ 'projekte.heading'|trans }}
     </h1>
 
     <a href="{{ path('app_projekt_intranet') }}"
        class="block p-8 border border-[#E5E7EB] rounded-xl hover:border-[#3730A3] hover:shadow-lg transition-all group">
         <div class="flex items-center justify-between mb-3">
             <h2 class="text-2xl font-semibold" style="font-family: 'Sora', sans-serif;">
-                Internes Intranet-Portal
+                {{ 'projekte.intranet_title'|trans }}
             </h2>
             <span class="text-[#3730A3] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
         </div>
         <p class="text-[#6B7280] mb-4 leading-relaxed">
-            Zentrale Plattform für einen Fertigungsbetrieb – über 25 Module von ERP-Reporting
-            bis Personalplanung. Eigenständig konzipiert, entwickelt und im Produktivbetrieb.
+            {{ 'projekte.intranet_text'|trans }}
         </p>
         <div class="flex flex-wrap gap-2 text-xs">
             <span class="px-3 py-1 bg-[#F3F4F6] rounded-full text-[#374151]">Symfony 7.4</span>
