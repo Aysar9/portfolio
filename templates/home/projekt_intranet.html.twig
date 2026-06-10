@@ -4,19 +4,19 @@
 
 {% block body %}
 <article class="max-w-3xl mx-auto px-6 pt-20 pb-16">
-    <a href="{{ path('app_projekte') }}" class="text-sm text-[#6B7280] hover:text-[#3730A3] transition-colors">{{ 'projekt_intranet.back'|trans }}</a>
+    <a href="{{ path('app_projekte') }}" class="font-mono text-xs uppercase tracking-[0.15em] text-muted hover:text-primary transition-colors">{{ 'projekt_intranet.back'|trans }}</a>
 
-    <p class="text-sm uppercase tracking-widest text-[#3730A3] mt-8 mb-4">{{ 'projekt_intranet.label'|trans }}</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6" style="font-family: 'Sora', sans-serif;">
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mt-8 mb-5">{{ 'projekt_intranet.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6">
         {{ 'projekt_intranet.heading'|trans }}
     </h1>
 
-    <p class="text-lg text-[#374151] leading-relaxed mb-12">
+    <p class="text-lg text-ink/80 leading-relaxed mb-12">
         {{ 'projekt_intranet.intro'|trans }}
     </p>
 
-    <h2 class="text-2xl font-semibold mt-12 mb-4" style="font-family: 'Sora', sans-serif;">{{ 'projekt_intranet.techstack_heading'|trans }}</h2>
-    <ul class="space-y-2 text-[#374151] leading-relaxed mb-8">
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_intranet.techstack_heading'|trans }}</h2>
+    <ul class="space-y-2 text-ink/80 leading-relaxed mb-8">
         <li>{{ 'projekt_intranet.tech_backend'|trans|raw }}</li>
         <li>{{ 'projekt_intranet.tech_frontend'|trans|raw }}</li>
         <li>{{ 'projekt_intranet.tech_data'|trans|raw }}</li>
@@ -25,42 +25,42 @@
         <li>{{ 'projekt_intranet.tech_docs'|trans|raw }}</li>
     </ul>
 
-    <h2 class="text-2xl font-semibold mt-12 mb-6" style="font-family: 'Sora', sans-serif;">{{ 'projekt_intranet.challenges_heading'|trans }}</h2>
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-6">{{ 'projekt_intranet.challenges_heading'|trans }}</h2>
 
     <div class="space-y-8">
         <div>
-            <h3 class="text-lg font-semibold mb-2">{{ 'projekt_intranet.challenge1_title'|trans }}</h3>
-            <p class="text-[#374151] leading-relaxed">
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.challenge1_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
                 {{ 'projekt_intranet.challenge1_text'|trans }}
             </p>
         </div>
         <div>
-            <h3 class="text-lg font-semibold mb-2">{{ 'projekt_intranet.challenge2_title'|trans }}</h3>
-            <p class="text-[#374151] leading-relaxed">
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.challenge2_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
                 {{ 'projekt_intranet.challenge2_text'|trans }}
             </p>
         </div>
         <div>
-            <h3 class="text-lg font-semibold mb-2">{{ 'projekt_intranet.challenge3_title'|trans }}</h3>
-            <p class="text-[#374151] leading-relaxed">
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.challenge3_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
                 {{ 'projekt_intranet.challenge3_text'|trans }}
             </p>
         </div>
         <div>
-            <h3 class="text-lg font-semibold mb-2">{{ 'projekt_intranet.challenge4_title'|trans }}</h3>
-            <p class="text-[#374151] leading-relaxed">
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.challenge4_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
                 {{ 'projekt_intranet.challenge4_text'|trans }}
             </p>
         </div>
     </div>
 
-    <h2 class="text-2xl font-semibold mt-12 mb-4" style="font-family: 'Sora', sans-serif;">{{ 'projekt_intranet.role_heading'|trans }}</h2>
-    <p class="text-[#374151] leading-relaxed mb-8">
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_intranet.role_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed mb-8">
         {{ 'projekt_intranet.role_text'|trans }}
     </p>
 
-    <h2 class="text-2xl font-semibold mt-12 mb-4" style="font-family: 'Sora', sans-serif;">{{ 'projekt_intranet.result_heading'|trans }}</h2>
-    <p class="text-[#374151] leading-relaxed">
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_intranet.result_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed">
         {{ 'projekt_intranet.result_text'|trans }}
     </p>
 </article>
