@@ -4,31 +4,31 @@
 
 {% block body %}
 <section class="max-w-4xl mx-auto px-6 pt-20 pb-16">
-    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">{{ 'kontakt.label'|trans }}</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-8" style="font-family: 'Sora', sans-serif;">
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'kontakt.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-8">
         {{ 'kontakt.heading'|trans }}
     </h1>
-    <p class="text-lg text-[#374151] leading-relaxed max-w-2xl mb-10">
+    <p class="text-lg text-ink/80 leading-relaxed max-w-2xl mb-10">
         {{ 'kontakt.intro'|trans }}
     </p>
 
     <div class="space-y-4 max-w-md">
         <a href="mailto:aysar.it.it@gmail.com"
-           class="flex items-center gap-4 p-4 border border-[#E5E7EB] rounded-lg hover:border-[#3730A3] transition-colors group">
-            <span class="text-[#3730A3] font-semibold">E-Mail</span>
-            <span class="text-[#374151] group-hover:text-[#3730A3] transition-colors">aysar.it.it@gmail.com</span>
+           class="flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
+            <span class="font-mono text-xs uppercase tracking-[0.15em] text-primary w-20">E-Mail</span>
+            <span class="text-ink/80 group-hover:text-primary transition-colors">aysar.it.it@gmail.com</span>
         </a>
 
         <a href="https://github.com/Aysar9" target="_blank" rel="noopener"
-           class="flex items-center gap-4 p-4 border border-[#E5E7EB] rounded-lg hover:border-[#3730A3] transition-colors group">
-            <span class="text-[#3730A3] font-semibold">GitHub</span>
-            <span class="text-[#374151] group-hover:text-[#3730A3] transition-colors">github.com/Aysar9</span>
+           class="flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
+            <span class="font-mono text-xs uppercase tracking-[0.15em] text-primary w-20">GitHub</span>
+            <span class="text-ink/80 group-hover:text-primary transition-colors">github.com/Aysar9</span>
         </a>
 
         {# <a href="https://www.linkedin.com/in/DEIN-PROFIL" target="_blank" rel="noopener"
-           class="flex items-center gap-4 p-4 border border-[#E5E7EB] rounded-lg hover:border-[#3730A3] transition-colors group">
-            <span class="text-[#3730A3] font-semibold">LinkedIn</span>
-            <span class="text-[#374151] group-hover:text-[#3730A3] transition-colors">linkedin.com/in/DEIN-PROFIL</span>
+           class="flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
+            <span class="font-mono text-xs uppercase tracking-[0.15em] text-primary w-20">LinkedIn</span>
+            <span class="text-ink/80 group-hover:text-primary transition-colors">linkedin.com/in/DEIN-PROFIL</span>
         </a> #}
     </div>
 </section>
