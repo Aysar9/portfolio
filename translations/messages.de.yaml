@@ -42,6 +42,8 @@ projekte:
     heading: 'Ausgewählte Arbeiten'
     intranet_title: 'Internes Intranet-Portal'
     intranet_text: 'Zentrale Plattform für einen Fertigungsbetrieb – über 25 Module von ERP-Reporting bis Personalplanung. Eigenständig konzipiert, entwickelt und im Produktivbetrieb.'
+    portfolio_title: 'Entwickler-Portfolio (diese Website)'
+    portfolio_text: 'Diese zweisprachige Portfolio-Website – eigenständig entwickelt und auf einem eigenen Linux-Server betrieben. Automatisches Deployment via GitHub Actions, Lighthouse-Score 100/100/100/100 und ein eingebauter KI-Assistent.'
 
 projekt_intranet:
     title: 'Internes Intranet-Portal – Case Study'
@@ -75,6 +77,29 @@ kontakt:
     label: 'Kontakt'
     heading: 'Lassen Sie uns sprechen'
     intro: 'Ich bin offen für neue Herausforderungen als Full-Stack Entwickler. Erreichen Sie mich am besten per E-Mail oder über die folgenden Kanäle.'
+
+projekt_portfolio:
+    title: 'Entwickler-Portfolio – Case Study'
+    back: '← Zurück zu Projekte'
+    label: 'Case Study'
+    heading: 'Zweisprachiges Entwickler-Portfolio mit eigener Server-Infrastruktur'
+    intro: 'Diese Website ist mein persönliches Portfolio – vollständig eigenständig konzipiert, entwickelt, deployt und betrieben. Vom Symfony-Backend über das zweisprachige Frontend bis zum eigenen Linux-Server mit automatisiertem Deployment liegt der komplette Stack in meiner Hand.'
+    techstack_heading: 'Tech-Stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.2+, Symfony 7.4 (Routing, Twig, Translation, HttpClient)'
+    tech_frontend: '<strong>Frontend:</strong> Twig, Tailwind CSS, AssetMapper, Stimulus – ohne Node-Build-Schritt'
+    tech_i18n: '<strong>Mehrsprachigkeit:</strong> Vollständig zweisprachig (Deutsch / Englisch) über Symfony Translation und locale-basiertes Routing'
+    tech_ai: '<strong>KI-Integration:</strong> Eingebauter KI-Assistent (Google Gemini), der Besucherfragen zu meinem Profil beantwortet – serverseitig, mit Rate-Limiting'
+    tech_infra: '<strong>Infrastruktur:</strong> Eigener Hetzner-Linux-Server mit Nginx, MySQL und HTTPS via Let''s Encrypt'
+    tech_cicd: '<strong>Deployment:</strong> Automatisches Deployment via GitHub Actions (CI/CD)'
+    highlights_heading: 'Highlights'
+    highlight1: 'Lighthouse-Score 100/100/100/100 (Performance, Accessibility, Best Practices, SEO).'
+    highlight2: 'Vollständig zweisprachig mit sauberem locale-Routing und gepflegten Übersetzungen.'
+    highlight3: 'KI-Assistent als praktischer Nachweis der KI-Integration in Web-Anwendungen.'
+    highlight4: 'Push-to-Deploy: Ein Git-Push löst Build und Auslieferung automatisch aus.'
+    role_heading: 'Meine Rolle'
+    role_text: 'Alleiniger Entwickler und Betreiber: Design, Frontend, Backend, Server-Setup, TLS, Deployment-Pipeline und laufender Betrieb stammen vollständig von mir.'
+    result_heading: 'Ergebnis'
+    result_text: 'Eine schnelle, barrierearme und wartbare Website mit perfektem Lighthouse-Score, automatischem Deployment und einem KI-Assistenten – ein kompakter End-to-End-Nachweis meiner Full-Stack- und DevOps-Fähigkeiten.'
 
 chat:
     button: 'Frag die KI'

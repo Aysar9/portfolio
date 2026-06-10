@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'projekt_portfolio.title'|trans }}{% endblock %}
+
+{% block body %}
+<article class="max-w-3xl mx-auto px-6 pt-20 pb-16">
+    <a href="{{ path('app_projekte') }}" class="font-mono text-xs uppercase tracking-[0.15em] text-muted hover:text-primary transition-colors">{{ 'projekt_portfolio.back'|trans }}</a>
+
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mt-8 mb-5">{{ 'projekt_portfolio.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6">
+        {{ 'projekt_portfolio.heading'|trans }}
+    </h1>
+
+    <p class="text-lg text-ink/80 leading-relaxed mb-12">
+        {{ 'projekt_portfolio.intro'|trans }}
+    </p>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_portfolio.techstack_heading'|trans }}</h2>
+    <ul class="space-y-2 text-ink/80 leading-relaxed mb-8">
+        <li>{{ 'projekt_portfolio.tech_backend'|trans|raw }}</li>
+        <li>{{ 'projekt_portfolio.tech_frontend'|trans|raw }}</li>
+        <li>{{ 'projekt_portfolio.tech_i18n'|trans|raw }}</li>
+        <li>{{ 'projekt_portfolio.tech_ai'|trans|raw }}</li>
+        <li>{{ 'projekt_portfolio.tech_infra'|trans|raw }}</li>
+        <li>{{ 'projekt_portfolio.tech_cicd'|trans|raw }}</li>
+    </ul>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_portfolio.highlights_heading'|trans }}</h2>
+    <ul class="space-y-2 text-ink/80 leading-relaxed mb-8">
+        <li>{{ 'projekt_portfolio.highlight1'|trans }}</li>
+        <li>{{ 'projekt_portfolio.highlight2'|trans }}</li>
+        <li>{{ 'projekt_portfolio.highlight3'|trans }}</li>
+        <li>{{ 'projekt_portfolio.highlight4'|trans }}</li>
+    </ul>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_portfolio.role_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed mb-8">
+        {{ 'projekt_portfolio.role_text'|trans }}
+    </p>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_portfolio.result_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed">
+        {{ 'projekt_portfolio.result_text'|trans }}
+    </p>
+</article>
+{% endblock %}
