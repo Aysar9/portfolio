@@ -49,6 +49,8 @@ final class PortfolioKnowledge
               built and deployed himself. Runs on his own Linux server (Hetzner) with Nginx, PHP, MySQL and
               HTTPS (Let's Encrypt); automatic deployment via GitHub Actions (CI/CD); Lighthouse score
               100/100/100/100. Stack: Symfony, Tailwind, Linux, CI/CD.
+              - The site uses self-hosted, privacy-friendly Umami analytics (cookieless, no personal
+                data collected) running on the same Linux server.
             - Internal intranet platform (Symfony, PHP, MS SQL, Twig, Tailwind CSS): an internal web
               application in active production use that he develops and extends. Includes user and role
               management and CRUD functionality, and connects to several existing databases. He works on it

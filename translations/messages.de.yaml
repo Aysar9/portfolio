@@ -93,6 +93,7 @@ projekt_portfolio:
     tech_ai: '<strong>KI-Integration:</strong> Eingebauter KI-Assistent (Google Gemini), der Besucherfragen zu meinem Profil beantwortet – serverseitig, mit Rate-Limiting'
     tech_infra: '<strong>Infrastruktur:</strong> Eigener Hetzner-Linux-Server mit Nginx, MySQL und HTTPS via Let''s Encrypt'
     tech_cicd: '<strong>Deployment:</strong> Automatisches Deployment via GitHub Actions (CI/CD)'
+    tech_analytics: '<strong>Analytics:</strong> Selbst gehostetes, datenschutzfreundliches Umami (cookielos) auf demselben Server'
     highlights_heading: 'Highlights'
     highlight1: 'Lighthouse-Score 100/100/100/100 (Performance, Accessibility, Best Practices, SEO).'
     highlight2: 'Vollständig zweisprachig mit sauberem locale-Routing und gepflegten Übersetzungen.'
