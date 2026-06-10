@@ -76,6 +76,16 @@ kontakt:
     heading: 'Lassen Sie uns sprechen'
     intro: 'Ich bin offen für neue Herausforderungen als Full-Stack Entwickler. Erreichen Sie mich am besten per E-Mail oder über die folgenden Kanäle.'
 
+chat:
+    button: 'Frag die KI'
+    title: 'Frag die KI über Aysar'
+    intro: 'Hallo! Ich beantworte Fragen zu Aysars Erfahrung, Projekten und Tech-Stack. Was möchten Sie wissen?'
+    placeholder: 'Ihre Frage…'
+    send: 'Senden'
+    close: 'Schließen'
+    error: 'Entschuldigung, da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut oder schreiben Sie an aysar.it.it@gmail.com.'
+    disabled: 'Der KI-Assistent ist gerade nicht verfügbar.'
+
 error404:
     title: 'Seite nicht gefunden – Aysar Alatrash'
     heading: 'Seite nicht gefunden'
