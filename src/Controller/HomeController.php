@@ -22,6 +22,19 @@ final class HomeController extends AbstractController
         return $this->render('home/about.html.twig');
     }
 
+
+    #[Route('/projekte', name: 'app_projekte')]
+    public function projekte(): Response
+    {
+        return $this->render('home/projekte.html.twig');
+    }
+
+    #[Route('/projekte/intranet-portal', name: 'app_projekt_intranet')]
+    public function projektIntranet(): Response
+    {
+        return $this->render('home/projekt_intranet.html.twig');
+    }
+
     #[Route('/kontakt', name: 'app_kontakt')]
     public function kontakt(): Response
     {
