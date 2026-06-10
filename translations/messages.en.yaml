@@ -1,0 +1,82 @@
+nav:
+    start: 'Home'
+    about: 'About'
+    projekte: 'Projects'
+    kontakt: 'Contact'
+
+meta:
+    description: 'Full-Stack developer focused on PHP and Symfony. I build and operate production web applications.'
+    og_title: 'Aysar Alatrash – Full-Stack Developer'
+    og_description: 'PHP / Symfony developer. Production web applications from backend to frontend.'
+
+layout:
+    location: 'Schwedt, Germany'
+
+home:
+    title: 'Aysar Alatrash – Full-Stack Developer (PHP / Symfony)'
+    badge: 'Full-Stack Developer'
+    intro: 'I build and operate production web applications with PHP and Symfony – from the backend and database integration to the frontend and server operations.'
+    cta_projects: 'View projects'
+    cta_contact: 'Get in touch'
+    tech_label: 'Technologies I work with every day:'
+    featured_label: 'Featured project'
+    featured_title: 'Internal Intranet Portal'
+    featured_text: 'A central platform for a manufacturing company with more than 25 modules – designed, built and operated single-handedly in production. Symfony 7.4, Doctrine DBAL, LDAP integration and asynchronous processing.'
+    cta_title: 'Looking to grow your team?'
+    cta_text: 'I am open to new challenges as a full-stack developer across Germany or remote.'
+    cta_button: 'Let’s talk'
+
+about:
+    title: 'About – Aysar Alatrash'
+    label: 'About me'
+    heading: 'From career changer to full-stack developer'
+    p1: 'After an IHK retraining as an application development specialist, I now work as a developer at Butting GmbH in Schwedt, where I single-handedly build and maintain an internal intranet platform.'
+    p2: 'My focus is on PHP and Symfony – from database modelling and backend logic to the frontend with Twig and Tailwind CSS. Operating Ubuntu servers with Nginx is also part of my daily work.'
+    p3: 'I work in a structured way, document my solutions and keep learning. I am currently deepening my knowledge of Docker, CI/CD and integrating AI features into web applications.'
+    cv_download: 'Download CV (PDF)'
+
+projekte:
+    title: 'Projects – Aysar Alatrash'
+    label: 'Projects'
+    heading: 'Selected work'
+    intranet_title: 'Internal Intranet Portal'
+    intranet_text: 'Central platform for a manufacturing company – more than 25 modules from ERP reporting to staff planning. Designed, built and operated single-handedly in production.'
+
+projekt_intranet:
+    title: 'Internal Intranet Portal – Case Study'
+    back: '← Back to projects'
+    label: 'Case Study'
+    heading: 'Internal intranet portal for a manufacturing company'
+    intro: 'A central, web-based platform that brings together numerous operational processes of a mid-sized industrial company – from ERP analysis and staff and capacity planning to printer, fleet and certificate management. I designed, built and operate the application single-handedly in production.'
+    techstack_heading: 'Tech stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.2+, Symfony 7.4 (Security, Messenger, Scheduler, Notifier, LDAP, Mailer)'
+    tech_frontend: '<strong>Frontend:</strong> Twig, Tailwind CSS, Symfony UX / Stimulus (Turbo, Chart.js) – around 60 Stimulus controllers'
+    tech_data: '<strong>Data access:</strong> Doctrine DBAL with several parallel connections to existing systems'
+    tech_auth: '<strong>Authentication:</strong> Active Directory / LDAP (custom user provider, SSO)'
+    tech_async: '<strong>Async:</strong> Symfony Messenger + Redis + Scheduler'
+    tech_docs: '<strong>Documents:</strong> mPDF, TCPDF, FPDI, Browsershot (PDF); PhpSpreadsheet (Excel)'
+    challenges_heading: 'Challenges & solutions'
+    challenge1_title: '1. Connecting several legacy databases'
+    challenge1_text: 'The data was spread across various existing systems (including an ERP). Instead of a classic ORM model, I deliberately use Doctrine DBAL with multiple connections and hand-optimised SQL queries – allowing external systems to be read and analysed without endangering their schemas.'
+    challenge2_title: '2. Central authentication via the company AD'
+    challenge2_text: 'Users should not have to register again. I built a custom LDAP user provider that authenticates against Active Directory and reads out roles. On top of that sits a modular permission system that enables each feature module individually.'
+    challenge3_title: '3. Long-running tasks do not block the UI'
+    challenge3_text: 'Large Excel exports, printer status queries, automatic warning emails and cleanup jobs run asynchronously via Symfony Messenger (Redis) and are partly scheduled via the Scheduler. The interface stays responsive.'
+    challenge4_title: '4. Document generation in many formats'
+    challenge4_text: 'Labels, certificates and reports need to be generated ready to print. I combine several PDF engines depending on the requirement and additionally deliver ERP reports as Excel.'
+    role_heading: 'My role'
+    role_text: 'I am the sole developer and maintainer: architecture, backend, frontend, database integration, deployment and ongoing operations are entirely my responsibility. The application is used in production and continuously extended with new modules.'
+    result_heading: 'Result'
+    result_text: 'A platform used in production with more than 25 functional modules. Scattered manual processes and isolated solutions were replaced by a central, AD-integrated access point – maintainable, extensible and built on a modern Symfony stack.'
+
+kontakt:
+    title: 'Contact – Aysar Alatrash'
+    label: 'Contact'
+    heading: 'Let’s talk'
+    intro: 'I am open to new challenges as a full-stack developer. The best way to reach me is by email or through the channels below.'
+
+error404:
+    title: 'Page not found – Aysar Alatrash'
+    heading: 'Page not found'
+    text: 'The requested page does not exist or has been moved.'
+    home: 'Back to home'

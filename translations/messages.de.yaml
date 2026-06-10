@@ -1,0 +1,82 @@
+nav:
+    start: 'Start'
+    about: 'Über mich'
+    projekte: 'Projekte'
+    kontakt: 'Kontakt'
+
+meta:
+    description: 'Full-Stack Entwickler mit Schwerpunkt PHP und Symfony. Ich entwickle und betreibe produktive Web-Anwendungen.'
+    og_title: 'Aysar Alatrash – Full-Stack Entwickler'
+    og_description: 'PHP / Symfony Entwickler. Produktive Web-Anwendungen vom Backend bis zum Frontend.'
+
+layout:
+    location: 'Schwedt, Deutschland'
+
+home:
+    title: 'Aysar Alatrash – Full-Stack Entwickler (PHP / Symfony)'
+    badge: 'Full-Stack Entwickler'
+    intro: 'Ich entwickle und betreibe produktive Web-Anwendungen mit PHP und Symfony – vom Backend über die Datenbank-Anbindung bis zum Frontend und Server-Betrieb.'
+    cta_projects: 'Projekte ansehen'
+    cta_contact: 'Kontakt aufnehmen'
+    tech_label: 'Technologien, mit denen ich täglich arbeite:'
+    featured_label: 'Ausgewähltes Projekt'
+    featured_title: 'Internes Intranet-Portal'
+    featured_text: 'Eine zentrale Plattform für einen Fertigungsbetrieb mit über 25 Modulen – eigenständig konzipiert, entwickelt und im Produktivbetrieb. Symfony 7.4, Doctrine DBAL, LDAP-Anbindung und asynchrone Verarbeitung.'
+    cta_title: 'Auf der Suche nach Verstärkung?'
+    cta_text: 'Ich bin offen für neue Herausforderungen als Full-Stack Entwickler im Raum Deutschland oder remote.'
+    cta_button: 'Lassen Sie uns sprechen'
+
+about:
+    title: 'Über mich – Aysar Alatrash'
+    label: 'Über mich'
+    heading: 'Vom Quereinstieg zum Full-Stack Entwickler'
+    p1: 'Nach einer IHK-Umschulung zum Fachinformatiker für Anwendungsentwicklung arbeite ich heute als Entwickler bei der Butting GmbH in Schwedt, wo ich eine interne Intranet-Plattform eigenständig entwickle und betreue.'
+    p2: 'Mein Schwerpunkt liegt auf PHP und Symfony – von der Datenbankmodellierung über die Backend-Logik bis zum Frontend mit Twig und Tailwind CSS. Auch der Betrieb auf Ubuntu-Servern mit Nginx gehört zu meinem Alltag.'
+    p3: 'Ich arbeite strukturiert, dokumentiere meine Lösungen und lerne kontinuierlich dazu. Aktuell vertiefe ich meine Kenntnisse in Docker, CI/CD und der Integration von KI-Funktionen in Web-Anwendungen.'
+    cv_download: 'Lebenslauf herunterladen (PDF)'
+
+projekte:
+    title: 'Projekte – Aysar Alatrash'
+    label: 'Projekte'
+    heading: 'Ausgewählte Arbeiten'
+    intranet_title: 'Internes Intranet-Portal'
+    intranet_text: 'Zentrale Plattform für einen Fertigungsbetrieb – über 25 Module von ERP-Reporting bis Personalplanung. Eigenständig konzipiert, entwickelt und im Produktivbetrieb.'
+
+projekt_intranet:
+    title: 'Internes Intranet-Portal – Case Study'
+    back: '← Zurück zu Projekte'
+    label: 'Case Study'
+    heading: 'Internes Intranet-Portal für einen Fertigungsbetrieb'
+    intro: 'Eine zentrale, webbasierte Plattform, die zahlreiche betriebliche Abläufe eines mittelständischen Industrieunternehmens bündelt – von der ERP-Auswertung über Personal- und Kapazitätsplanung bis hin zu Drucker-, Fuhrpark- und Zeugnisverwaltung. Ich habe die Anwendung eigenständig konzipiert, entwickelt und betreibe sie produktiv.'
+    techstack_heading: 'Tech-Stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.2+, Symfony 7.4 (Security, Messenger, Scheduler, Notifier, LDAP, Mailer)'
+    tech_frontend: '<strong>Frontend:</strong> Twig, Tailwind CSS, Symfony UX / Stimulus (Turbo, Chart.js) – rund 60 Stimulus-Controller'
+    tech_data: '<strong>Datenzugriff:</strong> Doctrine DBAL mit mehreren parallelen Verbindungen zu Bestandssystemen'
+    tech_auth: '<strong>Authentifizierung:</strong> Active Directory / LDAP (eigener User-Provider, SSO)'
+    tech_async: '<strong>Async:</strong> Symfony Messenger + Redis + Scheduler'
+    tech_docs: '<strong>Dokumente:</strong> mPDF, TCPDF, FPDI, Browsershot (PDF); PhpSpreadsheet (Excel)'
+    challenges_heading: 'Herausforderungen & Lösungen'
+    challenge1_title: '1. Anbindung mehrerer gewachsener Datenbanken'
+    challenge1_text: 'Die Daten lagen in verschiedenen Bestandssystemen (u. a. einem ERP). Statt eines klassischen ORM-Modells setze ich gezielt auf Doctrine DBAL mit mehreren Verbindungen und handoptimierten SQL-Abfragen – so lassen sich Fremdsysteme lesend auswerten, ohne deren Schemata zu gefährden.'
+    challenge2_title: '2. Zentrale Authentifizierung über das Firmen-AD'
+    challenge2_text: 'Anwender sollen sich nicht erneut registrieren. Ich habe einen eigenen LDAP-User-Provider gebaut, der gegen das Active Directory authentifiziert und Rollen ausliest. Darauf setzt ein modulares Berechtigungssystem auf, das jedes Funktionsmodul einzeln freischaltet.'
+    challenge3_title: '3. Lang laufende Aufgaben blockieren die UI nicht'
+    challenge3_text: 'Große Excel-Exporte, Drucker-Status-Abfragen, automatische Warn-Mails und Aufräum-Jobs laufen asynchron über Symfony Messenger (Redis) und werden teils über den Scheduler zeitgesteuert. Die Oberfläche bleibt reaktionsschnell.'
+    challenge4_title: '4. Dokumentengenerierung in vielen Formaten'
+    challenge4_text: 'Etiketten, Zeugnisse und Auswertungen müssen druckfertig erzeugt werden. Ich kombiniere mehrere PDF-Engines je nach Anforderung und liefere ERP-Auswertungen zusätzlich als Excel aus.'
+    role_heading: 'Meine Rolle'
+    role_text: 'Ich bin alleiniger Entwickler und Maintainer: Architektur, Backend, Frontend, Datenbank-Anbindung, Deployment und laufender Betrieb liegen vollständig bei mir. Die Anwendung wird produktiv genutzt und kontinuierlich um neue Module erweitert.'
+    result_heading: 'Ergebnis'
+    result_text: 'Eine produktiv eingesetzte Plattform mit über 25 fachlichen Modulen. Verstreute manuelle Abläufe und Insellösungen wurden durch einen zentralen, AD-integrierten Zugangspunkt ersetzt – wartbar, erweiterbar und auf einem modernen Symfony-Stack aufgebaut.'
+
+kontakt:
+    title: 'Kontakt – Aysar Alatrash'
+    label: 'Kontakt'
+    heading: 'Lassen Sie uns sprechen'
+    intro: 'Ich bin offen für neue Herausforderungen als Full-Stack Entwickler. Erreichen Sie mich am besten per E-Mail oder über die folgenden Kanäle.'
+
+error404:
+    title: 'Seite nicht gefunden – Aysar Alatrash'
+    heading: 'Seite nicht gefunden'
+    text: 'Die angeforderte Seite existiert nicht oder wurde verschoben.'
+    home: 'Zur Startseite'
