@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kontakt – Aysar Alatrash{% endblock %}
+
+{% block body %}
+<section class="max-w-4xl mx-auto px-6 pt-20 pb-16">
+    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">Kontakt</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-8" style="font-family: 'Sora', sans-serif;">
+        Lassen Sie uns sprechen
+    </h1>
+    <p class="text-lg text-[#374151] leading-relaxed max-w-2xl mb-10">
+        Ich bin offen für neue Herausforderungen als Full-Stack Entwickler.
+        Erreichen Sie mich am besten per E-Mail oder über die folgenden Kanäle.
+    </p>
+
+    <div class="space-y-4 max-w-md">
+        <a href="mailto:aysar.it.it@gmail.com"
+           class="flex items-center gap-4 p-4 border border-[#E5E7EB] rounded-lg hover:border-[#3730A3] transition-colors group">
+            <span class="text-[#3730A3] font-semibold">E-Mail</span>
+            <span class="text-[#374151] group-hover:text-[#3730A3] transition-colors">aysar.it.it@gmail.com</span>
+        </a>
+
+        <a href="https://github.com/Aysar9" target="_blank" rel="noopener"
+           class="flex items-center gap-4 p-4 border border-[#E5E7EB] rounded-lg hover:border-[#3730A3] transition-colors group">
+            <span class="text-[#3730A3] font-semibold">GitHub</span>
+            <span class="text-[#374151] group-hover:text-[#3730A3] transition-colors">github.com/Aysar9</span>
+        </a>
+
+        {# <a href="https://www.linkedin.com/in/DEIN-PROFIL" target="_blank" rel="noopener"
+           class="flex items-center gap-4 p-4 border border-[#E5E7EB] rounded-lg hover:border-[#3730A3] transition-colors group">
+            <span class="text-[#3730A3] font-semibold">LinkedIn</span>
+            <span class="text-[#374151] group-hover:text-[#3730A3] transition-colors">linkedin.com/in/DEIN-PROFIL</span>
+        </a> #}
+    </div>
+</section>
+{% endblock %}
