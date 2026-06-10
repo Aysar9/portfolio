@@ -42,6 +42,8 @@ projekte:
     heading: 'Selected work'
     intranet_title: 'Internal Intranet Portal'
     intranet_text: 'Central platform for a manufacturing company – more than 25 modules from ERP reporting to staff planning. Designed, built and operated single-handedly in production.'
+    portfolio_title: 'Developer portfolio (this website)'
+    portfolio_text: 'This bilingual portfolio site – built independently and run on my own Linux server. Automatic deployment via GitHub Actions, a 100/100/100/100 Lighthouse score and a built-in AI assistant.'
 
 projekt_intranet:
     title: 'Internal Intranet Portal – Case Study'
@@ -75,6 +77,29 @@ kontakt:
     label: 'Contact'
     heading: 'Let’s talk'
     intro: 'I am open to new challenges as a full-stack developer. The best way to reach me is by email or through the channels below.'
+
+projekt_portfolio:
+    title: 'Developer Portfolio – Case Study'
+    back: '← Back to projects'
+    label: 'Case Study'
+    heading: 'A bilingual developer portfolio with its own server infrastructure'
+    intro: 'This website is my personal portfolio – designed, built, deployed and operated entirely on my own. From the Symfony backend and the bilingual frontend to my own Linux server with an automated deployment pipeline, the full stack is in my hands.'
+    techstack_heading: 'Tech stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.2+, Symfony 7.4 (Routing, Twig, Translation, HttpClient)'
+    tech_frontend: '<strong>Frontend:</strong> Twig, Tailwind CSS, AssetMapper, Stimulus – no Node build step'
+    tech_i18n: '<strong>Internationalisation:</strong> Fully bilingual (German / English) via Symfony Translation and locale-based routing'
+    tech_ai: '<strong>AI integration:</strong> Built-in AI assistant (Google Gemini) that answers visitor questions about my profile – server-side, with rate limiting'
+    tech_infra: '<strong>Infrastructure:</strong> My own Hetzner Linux server with Nginx, MySQL and HTTPS via Let''s Encrypt'
+    tech_cicd: '<strong>Deployment:</strong> Automatic deployment via GitHub Actions (CI/CD)'
+    highlights_heading: 'Highlights'
+    highlight1: 'Lighthouse score 100/100/100/100 (Performance, Accessibility, Best Practices, SEO).'
+    highlight2: 'Fully bilingual with clean locale routing and maintained translations.'
+    highlight3: 'AI assistant as hands-on proof of integrating AI features into web applications.'
+    highlight4: 'Push-to-deploy: a single git push triggers build and release automatically.'
+    role_heading: 'My role'
+    role_text: 'Sole developer and operator: design, frontend, backend, server setup, TLS, deployment pipeline and ongoing operation are entirely my work.'
+    result_heading: 'Result'
+    result_text: 'A fast, accessible and maintainable website with a perfect Lighthouse score, automatic deployment and an AI assistant – a compact, end-to-end demonstration of my full-stack and DevOps skills.'
 
 chat:
     button: 'Ask the AI'
