@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Aysar Alatrash{% endblock %}</title>
+<title>{% block title %}Aysar Alatrash{% endblock %}</title>
+
+    {# SEO #}
+    <meta name="description" content="{% block meta_description %}Full-Stack Entwickler mit Schwerpunkt PHP und Symfony. Ich entwickle und betreibe produktive Web-Anwendungen.{% endblock %}">
+    <meta name="author" content="Aysar Alatrash">
+
+    {# Open Graph (LinkedIn, Facebook, WhatsApp) #}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aysar Alatrash – Full-Stack Entwickler">
+    <meta property="og:description" content="PHP / Symfony Entwickler. Produktive Web-Anwendungen vom Backend bis zum Frontend.">
+    <meta property="og:url" content="https://aysar-alatrash.de">
+    <meta property="og:locale" content="de_DE">
+
+    {# Twitter / X #}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aysar Alatrash – Full-Stack Entwickler">
+    <meta name="twitter:description" content="PHP / Symfony Entwickler. Produktive Web-Anwendungen vom Backend bis zum Frontend.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
