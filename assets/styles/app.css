@@ -7,9 +7,11 @@
     --font-sans: "Inter", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-    /* Palette — understated, sophisticated */
-    --color-primary: #3B82F6;
-    --color-primary-700: #2563EB;
+    /* Palette — understated, sophisticated.
+       primary is blue-600 (#2563EB): ~5:1 on the light canvas and under white
+       button text, so it passes WCAG 2.2 AA for normal-size text. */
+    --color-primary: #2563EB;
+    --color-primary-700: #1D4ED8;
     --color-secondary: #8B5CF6;
     --color-ink: #111827;
     --color-muted: #6B7280;
