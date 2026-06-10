@@ -30,25 +30,45 @@
 </head>
 <body class="bg-canvas text-ink antialiased font-sans">
 
-    <header class="border-b border-line">
-    <nav class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="{{ path('app_home') }}" class="font-display text-xl font-semibold tracking-tight text-ink">
+    <header class="sticky top-0 z-20 border-b border-line bg-canvas/80 backdrop-blur-sm" data-controller="navbar">
+    <nav class="max-w-4xl mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-y-4">
+        <a href="{{ path('app_home') }}" class="font-display text-xl font-semibold tracking-tight text-ink whitespace-nowrap">
             Aysar Alatrash
         </a>
-        <div class="flex items-center gap-6 text-sm text-muted">
-            <a href="{{ path('app_home') }}" class="hover:text-primary transition-colors">{{ 'nav.start'|trans }}</a>
-            <a href="{{ path('app_about') }}" class="hover:text-primary transition-colors">{{ 'nav.about'|trans }}</a>
-            <a href="{{ path('app_projekte') }}" class="hover:text-primary transition-colors">{{ 'nav.projekte'|trans }}</a>
-            <a href="{{ path('app_kontakt') }}" class="hover:text-primary transition-colors">{{ 'nav.kontakt'|trans }}</a>
 
-            {# Language toggle #}
-            <span class="flex gap-1 border-l border-line pl-4">
-                <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'de'})) }}"
-                class="{{ app.request.locale == 'de' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">DE</a>
-                <span>/</span>
-                <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}"
-                class="{{ app.request.locale == 'en' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">EN</a>
-            </span>
+        {# Hamburger — mobile only #}
+        <button type="button"
+                class="md:hidden -mr-2 p-2 text-ink rounded-md hover:text-primary transition-colors"
+                data-navbar-target="button"
+                data-action="navbar#toggle"
+                aria-expanded="false"
+                aria-controls="primary-nav"
+                aria-label="{{ 'nav.menu'|trans }}">
+            <svg data-navbar-target="openIcon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            <svg data-navbar-target="closeIcon" class="hidden w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+        </button>
+
+        {# Links — stacked on mobile, inline on desktop #}
+        <div id="primary-nav" data-navbar-target="menu" class="hidden w-full md:block md:w-auto">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6 text-sm text-muted">
+                <a href="{{ path('app_home') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.start'|trans }}</a>
+                <a href="{{ path('app_about') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.about'|trans }}</a>
+                <a href="{{ path('app_projekte') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.projekte'|trans }}</a>
+                <a href="{{ path('app_kontakt') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.kontakt'|trans }}</a>
+
+                {# Language toggle #}
+                <span class="flex gap-1 pt-4 border-t border-line md:pt-0 md:border-t-0 md:border-l md:pl-4">
+                    <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'de'})) }}"
+                    class="{{ app.request.locale == 'de' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">DE</a>
+                    <span>/</span>
+                    <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}"
+                    class="{{ app.request.locale == 'en' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">EN</a>
+                </span>
+            </div>
         </div>
     </nav>
     </header>

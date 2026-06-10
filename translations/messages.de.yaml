@@ -3,6 +3,7 @@ nav:
     about: 'Über mich'
     projekte: 'Projekte'
     kontakt: 'Kontakt'
+    menu: 'Menü öffnen'
 
 meta:
     description: 'Full-Stack Entwickler mit Schwerpunkt PHP und Symfony. Ich entwickle und betreibe produktive Web-Anwendungen.'
