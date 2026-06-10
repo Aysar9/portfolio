@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'datenschutz.title'|trans }} – Aysar Alatrash{% endblock %}
+
+{% block body %}
+<article class="max-w-3xl mx-auto px-6 pt-20 pb-16">
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'datenschutz.title'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-10">
+        {{ 'datenschutz.title'|trans }}
+    </h1>
+
+    <div class="space-y-8 text-ink/80 leading-relaxed">
+    {% if app.request.locale == 'de' %}
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Verantwortlicher</h2>
+            <p>Aysar Alatrash, Friedrich-Wolf-Ring 37, 16303 Schwedt, Deutschland<br>
+               E-Mail: <a href="mailto:aysar.it.it@gmail.com" class="text-primary hover:underline">aysar.it.it@gmail.com</a></p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Hosting &amp; Server-Logfiles</h2>
+            <p>Diese Website wird auf einem Server in Deutschland (Hetzner) betrieben. Beim Aufruf werden
+               automatisch Server-Logfiles verarbeitet (z. B. IP-Adresse, Datum und Uhrzeit, abgerufene
+               Seite, Browsertyp), um Betrieb und Sicherheit zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).
+               Diese Daten werden nach kurzer Zeit gelöscht.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Reichweitenmessung mit Umami</h2>
+            <p>Zur statistischen Auswertung der Zugriffe nutze ich Umami – eine selbst gehostete, cookielose
+               Analyse-Software. Es werden keine Cookies gesetzt, keine personenbezogenen Daten an Dritte
+               übermittelt und keine IP-Adressen gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">KI-Assistent</h2>
+            <p>Diese Website bietet einen KI-Chat-Assistenten. Wenn Sie eine Nachricht senden, wird der
+               eingegebene Text zur Beantwortung an die Schnittstelle von Google (Gemini API, Google Ireland
+               Ltd.) übermittelt und dort verarbeitet. Bitte geben Sie keine sensiblen oder personenbezogenen
+               Daten in den Chat ein. Weitere Informationen finden Sie in der
+               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-primary hover:underline">Datenschutzerklärung von Google</a>.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Schriftarten</h2>
+            <p>Die verwendeten Schriftarten werden lokal von diesem Server ausgeliefert (selbst gehostet).
+               Es findet keine Verbindung zu externen Anbietern wie Google Fonts statt; es werden hierfür
+               keine Daten an Dritte übermittelt.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Kontaktaufnahme</h2>
+            <p>Wenn Sie mich per E-Mail kontaktieren, verarbeite ich Ihre Angaben ausschließlich zur
+               Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO).</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Ihre Rechte</h2>
+            <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+               Datenübertragbarkeit sowie Widerspruch. Außerdem haben Sie ein Beschwerderecht bei einer
+               Datenschutz-Aufsichtsbehörde.</p>
+        </section>
+        <p class="text-sm text-muted">Stand: {{ "now"|date("m/Y") }}</p>
+    {% else %}
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Controller</h2>
+            <p>Aysar Alatrash, Friedrich-Wolf-Ring 37, 16303 Schwedt, Germany<br>
+               Email: <a href="mailto:aysar.it.it@gmail.com" class="text-primary hover:underline">aysar.it.it@gmail.com</a></p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Hosting &amp; server log files</h2>
+            <p>This website is operated on a server in Germany (Hetzner). When the site is accessed, server
+               log files are automatically processed (e.g. IP address, date and time, page accessed, browser
+               type) to ensure operation and security (Art. 6 (1)(f) GDPR). This data is deleted after a
+               short period.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Analytics with Umami</h2>
+            <p>I use Umami – a self-hosted, cookieless analytics tool – for statistical analysis of visits.
+               No cookies are set, no personal data is shared with third parties and no IP addresses are
+               stored. The legal basis is Art. 6 (1)(f) GDPR.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">AI assistant</h2>
+            <p>This website offers an AI chat assistant. When you send a message, the text you enter is
+               transmitted to and processed by Google's interface (Gemini API, Google Ireland Ltd.) in order
+               to generate a reply. Please do not enter sensitive or personal data into the chat. For more
+               information see
+               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-primary hover:underline">Google's privacy policy</a>.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Fonts</h2>
+            <p>The fonts used are served locally from this server (self-hosted). No connection is made to
+               external providers such as Google Fonts, and no data is transmitted to third parties for
+               this purpose.</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Contact</h2>
+            <p>If you contact me by email, I process your details solely to handle your request
+               (Art. 6 (1)(b) and (f) GDPR).</p>
+        </section>
+        <section>
+            <h2 class="font-display text-xl font-semibold text-ink mb-2">Your rights</h2>
+            <p>You have the right to access, rectification, erasure, restriction of processing, data
+               portability and objection. You also have the right to lodge a complaint with a data
+               protection supervisory authority.</p>
+        </section>
+        <p class="text-sm text-muted">Last updated: {{ "now"|date("m/Y") }}</p>
+    {% endif %}
+    </div>
+</article>
+{% endblock %}

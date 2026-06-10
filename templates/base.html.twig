@@ -36,9 +36,7 @@
     <meta name="twitter:title" content="{{ 'meta.og_title'|trans }}">
     <meta name="twitter:description" content="{{ 'meta.og_description'|trans }}">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {# Fonts are self-hosted via @font-face in app.css — no external font requests #}
     {# Privacy-friendly analytics (self-hosted Umami) — only in production, no cookies #}
     {% if app.environment == 'prod' %}
         <script defer src="https://analytics.aysar-alatrash.de/script.js" data-website-id="943014cf-de1a-446b-b474-cbf868337159"></script>
@@ -115,9 +113,13 @@
     </main>
 
     <footer class="border-t border-line mt-24">
-        <div class="max-w-4xl mx-auto px-6 py-8 text-sm text-muted flex justify-between">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-sm text-muted flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <span>© {{ "now"|date("Y") }} Aysar Alatrash</span>
-            <span>{{ 'layout.location'|trans }}</span>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <a href="{{ path('app_impressum') }}" class="hover:text-primary transition-colors">{{ 'footer.impressum'|trans }}</a>
+                <a href="{{ path('app_datenschutz') }}" class="hover:text-primary transition-colors">{{ 'footer.datenschutz'|trans }}</a>
+                <span>{{ 'layout.location'|trans }}</span>
+            </div>
         </div>
     </footer>
 

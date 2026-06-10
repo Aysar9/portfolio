@@ -47,4 +47,16 @@ final class HomeController extends AbstractController
     {
         return $this->render('home/kontakt.html.twig');
     }
+
+    #[Route('/impressum', name: 'app_impressum')]
+    public function impressum(): Response
+    {
+        return $this->render('home/impressum.html.twig');
+    }
+
+    #[Route('/datenschutz', name: 'app_datenschutz')]
+    public function datenschutz(): Response
+    {
+        return $this->render('home/datenschutz.html.twig');
+    }
 }

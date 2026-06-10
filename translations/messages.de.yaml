@@ -14,6 +14,16 @@ meta:
 layout:
     location: 'Schwedt, Deutschland'
 
+footer:
+    impressum: 'Impressum'
+    datenschutz: 'Datenschutz'
+
+impressum:
+    title: 'Impressum'
+
+datenschutz:
+    title: 'Datenschutzerklärung'
+
 home:
     title: 'Aysar Alatrash – Full-Stack Entwickler (PHP / Symfony)'
     badge: 'Full-Stack Entwickler'
