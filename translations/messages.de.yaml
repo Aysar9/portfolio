@@ -4,6 +4,7 @@ nav:
     projekte: 'Projekte'
     kontakt: 'Kontakt'
     menu: 'Menü öffnen'
+    theme: 'Design wechseln'
 
 meta:
     description: 'Full-Stack Entwickler mit Schwerpunkt PHP und Symfony. Ich entwickle und betreibe produktive Web-Anwendungen.'
@@ -35,6 +36,7 @@ about:
     p2: 'Mein Schwerpunkt liegt auf PHP und Symfony – von der Datenbankmodellierung über die Backend-Logik bis zum Frontend mit Twig und Tailwind CSS. Auch der Betrieb auf Ubuntu-Servern mit Nginx gehört zu meinem Alltag.'
     p3: 'Ich arbeite strukturiert, dokumentiere meine Lösungen und lerne kontinuierlich dazu. Aktuell vertiefe ich meine Kenntnisse in Docker, CI/CD und der Integration von KI-Funktionen in Web-Anwendungen.'
     cv_download: 'Lebenslauf herunterladen (PDF)'
+    learning_label: 'Aktuell im Fokus'
 
 projekte:
     title: 'Projekte – Aysar Alatrash'
@@ -100,6 +102,7 @@ projekt_portfolio:
     role_text: 'Alleiniger Entwickler und Betreiber: Design, Frontend, Backend, Server-Setup, TLS, Deployment-Pipeline und laufender Betrieb stammen vollständig von mir.'
     result_heading: 'Ergebnis'
     result_text: 'Eine schnelle, barrierearme und wartbare Website mit perfektem Lighthouse-Score, automatischem Deployment und einem KI-Assistenten – ein kompakter End-to-End-Nachweis meiner Full-Stack- und DevOps-Fähigkeiten.'
+    repo_link: 'Code auf GitHub ansehen'
 
 chat:
     button: 'Frag die KI'
