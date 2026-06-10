@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
-body {
-    /* background-color: skyblue; */
+/* ===== Refined design system — semantic tokens ===== */
+@theme {
+    /* Typography: elegant serif display, clean sans body, mono for caps labels */
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    /* Palette — understated, sophisticated */
+    --color-primary: #3B82F6;
+    --color-primary-700: #2563EB;
+    --color-secondary: #8B5CF6;
+    --color-ink: #111827;
+    --color-muted: #6B7280;
+    --color-line: #E5E7EB;
+    --color-surface: #FFFFFF;
+    --color-canvas: #FAFAF9;
+
+    /* Modest rounding per Refined tokens (sm 4px / md 8px) */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+}
+
+/* Visible focus state for keyboard-first interactions (WCAG 2.2 AA) */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
