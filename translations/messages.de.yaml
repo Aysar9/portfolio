@@ -15,7 +15,7 @@ layout:
 home:
     title: 'Aysar Alatrash – Full-Stack Entwickler (PHP / Symfony)'
     badge: 'Full-Stack Entwickler'
-    intro: 'Ich entwickle und betreibe produktive Web-Anwendungen mit PHP und Symfony – vom Backend über die Datenbank-Anbindung bis zum Frontend und Server-Betrieb.'
+    intro: 'Ich habe eine produktive Intranet-Plattform mit über 25 Modulen für einen Fertigungsbetrieb eigenständig entwickelt und betreibe sie – vom Datenbank-Backend über die Symfony-Logik bis zum Frontend und Server-Betrieb.'
     cta_projects: 'Projekte ansehen'
     cta_contact: 'Kontakt aufnehmen'
     tech_label: 'Technologien, mit denen ich täglich arbeite:'
