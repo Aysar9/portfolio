@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Internes Intranet-Portal – Case Study{% endblock %}
+
+{% block body %}
+<article class="max-w-3xl mx-auto px-6 pt-20 pb-16">
+    <a href="{{ path('app_projekte') }}" class="text-sm text-[#6B7280] hover:text-[#3730A3] transition-colors">← Zurück zu Projekte</a>
+
+    <p class="text-sm uppercase tracking-widest text-[#3730A3] mt-8 mb-4">Case Study</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6" style="font-family: 'Sora', sans-serif;">
+        Internes Intranet-Portal für einen Fertigungsbetrieb
+    </h1>
+
+    <p class="text-lg text-[#374151] leading-relaxed mb-12">
+        Eine zentrale, webbasierte Plattform, die zahlreiche betriebliche Abläufe eines
+        mittelständischen Industrieunternehmens bündelt – von der ERP-Auswertung über
+        Personal- und Kapazitätsplanung bis hin zu Drucker-, Fuhrpark- und Zeugnisverwaltung.
+        Ich habe die Anwendung eigenständig konzipiert, entwickelt und betreibe sie produktiv.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-4" style="font-family: 'Sora', sans-serif;">Tech-Stack</h2>
+    <ul class="space-y-2 text-[#374151] leading-relaxed mb-8">
+        <li><strong>Backend:</strong> PHP 8.2+, Symfony 7.4 (Security, Messenger, Scheduler, Notifier, LDAP, Mailer)</li>
+        <li><strong>Frontend:</strong> Twig, Tailwind CSS, Symfony UX / Stimulus (Turbo, Chart.js) – rund 60 Stimulus-Controller</li>
+        <li><strong>Datenzugriff:</strong> Doctrine DBAL mit mehreren parallelen Verbindungen zu Bestandssystemen</li>
+        <li><strong>Authentifizierung:</strong> Active Directory / LDAP (eigener User-Provider, SSO)</li>
+        <li><strong>Async:</strong> Symfony Messenger + Redis + Scheduler</li>
+        <li><strong>Dokumente:</strong> mPDF, TCPDF, FPDI, Browsershot (PDF); PhpSpreadsheet (Excel)</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-6" style="font-family: 'Sora', sans-serif;">Herausforderungen & Lösungen</h2>
+
+    <div class="space-y-8">
+        <div>
+            <h3 class="text-lg font-semibold mb-2">1. Anbindung mehrerer gewachsener Datenbanken</h3>
+            <p class="text-[#374151] leading-relaxed">
+                Die Daten lagen in verschiedenen Bestandssystemen (u. a. einem ERP). Statt eines klassischen
+                ORM-Modells setze ich gezielt auf Doctrine DBAL mit mehreren Verbindungen und handoptimierten
+                SQL-Abfragen – so lassen sich Fremdsysteme lesend auswerten, ohne deren Schemata zu gefährden.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold mb-2">2. Zentrale Authentifizierung über das Firmen-AD</h3>
+            <p class="text-[#374151] leading-relaxed">
+                Anwender sollen sich nicht erneut registrieren. Ich habe einen eigenen LDAP-User-Provider gebaut,
+                der gegen das Active Directory authentifiziert und Rollen ausliest. Darauf setzt ein modulares
+                Berechtigungssystem auf, das jedes Funktionsmodul einzeln freischaltet.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold mb-2">3. Lang laufende Aufgaben blockieren die UI nicht</h3>
+            <p class="text-[#374151] leading-relaxed">
+                Große Excel-Exporte, Drucker-Status-Abfragen, automatische Warn-Mails und Aufräum-Jobs laufen
+                asynchron über Symfony Messenger (Redis) und werden teils über den Scheduler zeitgesteuert.
+                Die Oberfläche bleibt reaktionsschnell.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold mb-2">4. Dokumentengenerierung in vielen Formaten</h3>
+            <p class="text-[#374151] leading-relaxed">
+                Etiketten, Zeugnisse und Auswertungen müssen druckfertig erzeugt werden. Ich kombiniere mehrere
+                PDF-Engines je nach Anforderung und liefere ERP-Auswertungen zusätzlich als Excel aus.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-4" style="font-family: 'Sora', sans-serif;">Meine Rolle</h2>
+    <p class="text-[#374151] leading-relaxed mb-8">
+        Ich bin alleiniger Entwickler und Maintainer: Architektur, Backend, Frontend, Datenbank-Anbindung,
+        Deployment und laufender Betrieb liegen vollständig bei mir. Die Anwendung wird produktiv genutzt
+        und kontinuierlich um neue Module erweitert.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-4" style="font-family: 'Sora', sans-serif;">Ergebnis</h2>
+    <p class="text-[#374151] leading-relaxed">
+        Eine produktiv eingesetzte Plattform mit über 25 fachlichen Modulen. Verstreute manuelle Abläufe und
+        Insellösungen wurden durch einen zentralen, AD-integrierten Zugangspunkt ersetzt – wartbar, erweiterbar
+        und auf einem modernen Symfony-Stack aufgebaut.
+    </p>
+</article>
+{% endblock %}
