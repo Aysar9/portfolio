@@ -63,7 +63,7 @@ export default class extends Controller {
     appendMessage(role, text) {
         const bubble = document.createElement('div');
         if (role === 'user') {
-            bubble.className = 'ml-auto max-w-[85%] rounded-md bg-primary px-3 py-2 text-white';
+            bubble.className = 'ml-auto max-w-[85%] rounded-md bg-primary px-3 py-2 text-on-primary';
         } else if (role === 'error') {
             bubble.className = 'max-w-[85%] rounded-md bg-canvas px-3 py-2 text-danger';
         } else {

@@ -14,9 +14,19 @@
         <p>{{ 'about.p2'|trans }}</p>
         <p>{{ 'about.p3'|trans }}</p>
     </div>
+
+    {# Currently learning #}
+    <div class="mt-10">
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-4">{{ 'about.learning_label'|trans }}</p>
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+            {% for tech in ['Docker', 'CI/CD', 'KI / AI'] %}
+                <span class="px-3 py-1 bg-surface border border-line rounded-full text-ink/80">{{ tech }}</span>
+            {% endfor %}
+        </div>
+    </div>
     <div class="mt-10">
         <a href="{{ asset('files/Lebenslauf_Aysar_Alatrash.pdf') }}" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary-700 transition-colors">
+           class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-md font-medium hover:bg-primary-700 transition-colors">
             {{ 'about.cv_download'|trans }}
         </a>
     </div>

@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# Apply saved (or system) theme before paint to avoid a flash #}
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
 <title>{% block title %}Aysar Alatrash{% endblock %}</title>
 
     {# SEO #}
@@ -26,6 +39,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    {# Privacy-friendly analytics — only in production, no cookies #}
+    {% if app.environment == 'prod' %}
+        <script defer data-domain="aysar-alatrash.de" src="https://plausible.io/js/script.js"></script>
+    {% endif %}
+
     {% block stylesheets %}
         {{ importmap() }}
     {% endblock %}
@@ -72,6 +90,21 @@
                     <a href="{{ path(lang_route, lang_params|merge({'_locale': 'en'})) }}"
                     class="{{ app.request.locale == 'en' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">EN</a>
                 </span>
+
+                {# Theme toggle #}
+                <button type="button"
+                        data-controller="theme"
+                        data-action="theme#toggle"
+                        aria-label="{{ 'nav.theme'|trans }}"
+                        class="-ml-1 rounded-md p-1 text-muted hover:text-primary transition-colors">
+                    <svg data-theme-target="moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+                    </svg>
+                    <svg data-theme-target="sun" class="hidden w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path stroke-linecap="round" d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
