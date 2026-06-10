@@ -23,31 +23,31 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     {% block stylesheets %}
         {{ importmap() }}
     {% endblock %}
 </head>
-<body class="bg-[#FAFAF9] text-[#1A1A1A] antialiased" style="font-family: 'Inter', sans-serif;">
+<body class="bg-canvas text-ink antialiased font-sans">
 
-    <header class="border-b border-[#E5E7EB]">
+    <header class="border-b border-line">
     <nav class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="{{ path('app_home') }}" class="text-lg font-semibold tracking-tight" style="font-family: 'Sora', sans-serif;">
+        <a href="{{ path('app_home') }}" class="font-display text-xl font-semibold tracking-tight text-ink">
             Aysar Alatrash
         </a>
-        <div class="flex items-center gap-6 text-sm text-[#6B7280]">
-            <a href="{{ path('app_home') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.start'|trans }}</a>
-            <a href="{{ path('app_about') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.about'|trans }}</a>
-            <a href="{{ path('app_projekte') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.projekte'|trans }}</a>
-            <a href="{{ path('app_kontakt') }}" class="hover:text-[#3730A3] transition-colors">{{ 'nav.kontakt'|trans }}</a>
+        <div class="flex items-center gap-6 text-sm text-muted">
+            <a href="{{ path('app_home') }}" class="hover:text-primary transition-colors">{{ 'nav.start'|trans }}</a>
+            <a href="{{ path('app_about') }}" class="hover:text-primary transition-colors">{{ 'nav.about'|trans }}</a>
+            <a href="{{ path('app_projekte') }}" class="hover:text-primary transition-colors">{{ 'nav.projekte'|trans }}</a>
+            <a href="{{ path('app_kontakt') }}" class="hover:text-primary transition-colors">{{ 'nav.kontakt'|trans }}</a>
 
             {# Language toggle #}
-            <span class="flex gap-1 border-l border-[#E5E7EB] pl-4">
+            <span class="flex gap-1 border-l border-line pl-4">
                 <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'de'})) }}"
-                class="{{ app.request.locale == 'de' ? 'text-[#3730A3] font-semibold' : 'hover:text-[#3730A3]' }} transition-colors">DE</a>
+                class="{{ app.request.locale == 'de' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">DE</a>
                 <span>/</span>
                 <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}"
-                class="{{ app.request.locale == 'en' ? 'text-[#3730A3] font-semibold' : 'hover:text-[#3730A3]' }} transition-colors">EN</a>
+                class="{{ app.request.locale == 'en' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">EN</a>
             </span>
         </div>
     </nav>
@@ -57,8 +57,8 @@
         {% block body %}{% endblock %}
     </main>
 
-    <footer class="border-t border-[#E5E7EB] mt-24">
-        <div class="max-w-4xl mx-auto px-6 py-8 text-sm text-[#6B7280] flex justify-between">
+    <footer class="border-t border-line mt-24">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-sm text-muted flex justify-between">
             <span>© {{ "now"|date("Y") }} Aysar Alatrash</span>
             <span>{{ 'layout.location'|trans }}</span>
         </div>

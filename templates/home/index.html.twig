@@ -6,32 +6,32 @@
 
 {# ===== Hero ===== #}
 <section class="max-w-4xl mx-auto px-6 pt-24 pb-20">
-    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">{{ 'home.badge'|trans }}</p>
-    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6" style="font-family: 'Sora', sans-serif;">
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'home.badge'|trans }}</p>
+    <h1 class="font-display text-5xl md:text-6xl font-semibold leading-[1.1] tracking-tight mb-6">
         Aysar Alatrash
     </h1>
-    <p class="text-xl text-[#6B7280] max-w-2xl leading-relaxed mb-8">
+    <p class="text-xl text-muted max-w-2xl leading-relaxed mb-10">
         {{ 'home.intro'|trans }}
     </p>
     <div class="flex flex-wrap gap-4">
         <a href="{{ path('app_projekte') }}"
-           class="px-6 py-3 bg-[#3730A3] text-white rounded-lg font-medium hover:bg-[#2d2882] transition-colors">
+           class="px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary-700 transition-colors">
             {{ 'home.cta_projects'|trans }}
         </a>
         <a href="{{ path('app_kontakt') }}"
-           class="px-6 py-3 border border-[#E5E7EB] rounded-lg font-medium hover:border-[#3730A3] transition-colors">
+           class="px-6 py-3 border border-line rounded-md font-medium text-ink hover:border-primary hover:text-primary transition-colors">
             {{ 'home.cta_contact'|trans }}
         </a>
     </div>
 </section>
 
 {# ===== Tech-Stack Streifen ===== #}
-<section class="border-y border-[#E5E7EB] bg-white/50">
+<section class="border-y border-line bg-surface/60">
     <div class="max-w-4xl mx-auto px-6 py-8">
-        <p class="text-sm text-[#6B7280] mb-4">{{ 'home.tech_label'|trans }}</p>
+        <p class="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-4">{{ 'home.tech_label'|trans }}</p>
         <div class="flex flex-wrap gap-3 text-sm">
             {% for tech in ['PHP 8', 'Symfony', 'Twig', 'Tailwind CSS', 'Doctrine', 'MySQL / MS-SQL', 'JavaScript', 'Linux / Nginx', 'Git'] %}
-                <span class="px-4 py-2 bg-[#F3F4F6] rounded-full text-[#374151]">{{ tech }}</span>
+                <span class="px-4 py-2 bg-surface border border-line rounded-full text-ink/80">{{ tech }}</span>
             {% endfor %}
         </div>
     </div>
@@ -39,16 +39,16 @@
 
 {# ===== Mitgebrachtes Projekt ===== #}
 <section class="max-w-4xl mx-auto px-6 py-20">
-    <p class="text-sm uppercase tracking-widest text-[#3730A3] mb-4">{{ 'home.featured_label'|trans }}</p>
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'home.featured_label'|trans }}</p>
     <a href="{{ path('app_projekt_intranet') }}"
-       class="block p-8 border border-[#E5E7EB] rounded-xl hover:border-[#3730A3] hover:shadow-lg transition-all group">
-        <div class="flex items-center justify-between mb-3">
-            <h2 class="text-2xl font-semibold" style="font-family: 'Sora', sans-serif;">
+       class="block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
+        <div class="flex items-center justify-between gap-4 mb-3">
+            <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
                 {{ 'home.featured_title'|trans }}
             </h2>
-            <span class="text-[#3730A3] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+            <span aria-hidden="true" class="text-primary translate-x-0 group-hover:translate-x-1 transition-transform">&rarr;</span>
         </div>
-        <p class="text-[#6B7280] leading-relaxed">
+        <p class="text-muted leading-relaxed">
             {{ 'home.featured_text'|trans }}
         </p>
     </a>
@@ -56,15 +56,15 @@
 
 {# ===== Call to Action ===== #}
 <section class="max-w-4xl mx-auto px-6 pb-24">
-    <div class="bg-[#3730A3] rounded-2xl px-8 py-12 text-center">
-        <h2 class="text-3xl font-bold text-white mb-4" style="font-family: 'Sora', sans-serif;">
+    <div class="bg-ink rounded-md px-8 py-14 text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
             {{ 'home.cta_title'|trans }}
         </h2>
-        <p class="text-indigo-100 mb-8 max-w-xl mx-auto leading-relaxed">
+        <p class="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
             {{ 'home.cta_text'|trans }}
         </p>
         <a href="{{ path('app_kontakt') }}"
-           class="inline-block px-6 py-3 bg-white text-[#3730A3] rounded-lg font-medium hover:bg-indigo-50 transition-colors">
+           class="inline-block px-6 py-3 bg-white text-ink rounded-md font-medium hover:bg-white/90 transition-colors">
             {{ 'home.cta_button'|trans }}
         </a>
     </div>
