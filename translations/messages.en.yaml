@@ -76,6 +76,16 @@ kontakt:
     heading: 'Let’s talk'
     intro: 'I am open to new challenges as a full-stack developer. The best way to reach me is by email or through the channels below.'
 
+chat:
+    button: 'Ask the AI'
+    title: 'Ask the AI about Aysar'
+    intro: 'Hi! I answer questions about Aysar''s experience, projects and tech stack. What would you like to know?'
+    placeholder: 'Your question…'
+    send: 'Send'
+    close: 'Close'
+    error: 'Sorry, something went wrong. Please try again later or email aysar.it.it@gmail.com.'
+    disabled: 'The AI assistant is currently unavailable.'
+
 error404:
     title: 'Page not found – Aysar Alatrash'
     heading: 'Page not found'
