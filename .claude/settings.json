@@ -2,7 +2,26 @@
   "permissions": {
     "allow": [
       "Bash(php bin/console debug:translation de --only-missing)",
-      "Bash(php bin/console debug:translation en --only-missing)"
+      "Bash(php bin/console debug:translation en --only-missing)",
+      "Bash(php bin/console tailwind:build)",
+      "Bash(php bin/console lint:twig templates/base.html.twig templates/bundles/TwigBundle/Exception/error404.html.twig)",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)",
+      "Bash(php bin/console lint:twig templates/_chat.html.twig templates/base.html.twig)",
+      "Bash(php -l src/Controller/ChatController.php)",
+      "Bash(php -l src/Service/PortfolioKnowledge.php)",
+      "Bash(php bin/console debug:router app_chat)",
+      "Bash(php bin/console lint:container)",
+      "Bash(git check-ignore *)",
+      "Bash(findstr /C:\"GEMINI\")",
+      "Bash(php bin/console lint:twig templates/home/projekt_portfolio.html.twig templates/home/projekte.html.twig)",
+      "Bash(php bin/console lint:yaml translations/messages.de.yaml translations/messages.en.yaml)",
+      "Bash(php bin/console debug:router app_projekt_portfolio)",
+      "Bash(findstr /C:\"Path\")",
+      "Bash(php bin/console debug:router)",
+      "Bash(php bin/console lint:twig templates)",
+      "Bash(php bin/console lint:yaml translations)",
+      "Bash(php bin/console lint:twig templates/home/projekt_portfolio.html.twig)"
     ]
   }
 }
