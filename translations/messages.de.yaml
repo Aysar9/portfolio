@@ -56,6 +56,8 @@ projekte:
     intranet_text: 'Zentrale Plattform für einen Fertigungsbetrieb – über 25 Module von ERP-Reporting bis Personalplanung. Eigenständig konzipiert, entwickelt und im Produktivbetrieb.'
     portfolio_title: 'Entwickler-Portfolio (diese Website)'
     portfolio_text: 'Diese zweisprachige Portfolio-Website – eigenständig entwickelt und auf einem eigenen Linux-Server betrieben. Automatisches Deployment via GitHub Actions, Lighthouse-Score 100/100/100/100 und ein eingebauter KI-Assistent.'
+    jobtrack_title: 'JobTrack API'
+    jobtrack_text: 'REST-API zur Verwaltung von Bewerbungsstatus – containerisiert mit Docker, mit sauberer Status-Logik und 15 automatisierten Tests abgesichert.'
 
 projekt_intranet:
     title: 'Internes Intranet-Portal – Case Study'
@@ -113,6 +115,32 @@ projekt_portfolio:
     role_text: 'Alleiniger Entwickler und Betreiber: Design, Frontend, Backend, Server-Setup, TLS, Deployment-Pipeline und laufender Betrieb stammen vollständig von mir.'
     result_heading: 'Ergebnis'
     result_text: 'Eine schnelle, barrierearme und wartbare Website mit perfektem Lighthouse-Score, automatischem Deployment und einem KI-Assistenten – ein kompakter End-to-End-Nachweis meiner Full-Stack- und DevOps-Fähigkeiten.'
+    repo_link: 'Code auf GitHub ansehen'
+
+projekt_jobtrack:
+    title: 'JobTrack API – Case Study'
+    back: '← Zurück zu Projekte'
+    label: 'Case Study'
+    heading: 'REST-API zur Verwaltung von Bewerbungen'
+    intro: 'Eine REST-API, die den Status eigener Bewerbungen durchgängig abbildet – von „beworben" bis „angenommen". Bewusst als Übungsprojekt während der Jobsuche gebaut, um API-Design, Containerisierung und automatisierte Tests praxisnah zu vertiefen.'
+    techstack_heading: 'Tech-Stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.3, Symfony 7, Doctrine ORM'
+    tech_data: '<strong>Datenbank:</strong> MySQL 8'
+    tech_infra: '<strong>Infrastruktur:</strong> Docker &amp; Docker Compose (Nginx, PHP-FPM, MySQL als getrennte Container)'
+    tech_tests: '<strong>Tests:</strong> PHPUnit – Unit- und funktionale Tests (15 Tests)'
+    challenges_heading: 'Herausforderungen & Lösungen'
+    challenge1_title: '1. Gültige Status-Übergänge erzwingen'
+    challenge1_text: 'Eine Bewerbung darf nicht von jedem Status in jeden anderen wechseln (z. B. nicht direkt von „beworben" zu „angenommen"). Die Übergangslogik sitzt als eigene Business-Regel im Domänen-Code statt verstreut im Controller, mit einem dedizierten PATCH-Endpunkt für Statuswechsel.'
+    challenge2_title: '2. Sauberes REST-Design statt roher CRUD-Endpunkte'
+    challenge2_text: 'Endpunkte liefern konsistente HTTP-Statuscodes (200, 201, 204, 404, 422) und strukturierte Validierungsfehler, damit ein Client zuverlässig zwischen „ungültige Eingabe" und „nicht gefunden" unterscheiden kann.'
+    challenge3_title: '3. Von Anfang an testgetrieben'
+    challenge3_text: '15 Tests decken sowohl die Statuslogik auf Unit-Ebene als auch die HTTP-Endpunkte funktional ab – bewusst als Übung, Tests parallel zur Funktionalität zu schreiben statt nachträglich.'
+    challenge4_title: '4. Reproduzierbare Umgebung mit Docker'
+    challenge4_text: 'Nginx, PHP-FPM und MySQL laufen als getrennte Container über Docker Compose. Ein „docker compose up -d --build" plus Migration reicht, um die Anwendung überall identisch zum Laufen zu bringen.'
+    role_heading: 'Meine Rolle'
+    role_text: 'Alleiniger Entwickler: API-Design, Domänenlogik, Datenbank-Modellierung, Tests und Docker-Setup stammen vollständig von mir – als gezieltes Übungsprojekt für Backend- und DevOps-Praxis.'
+    result_heading: 'Ergebnis'
+    result_text: 'Eine funktionierende, vollständig containerisierte REST-API mit sauberem Status-Lifecycle, konsistenten HTTP-Antworten und 15 bestehenden Tests – ein kompakter Nachweis für API-Design, Testdisziplin und Docker-Kenntnisse.'
     repo_link: 'Code auf GitHub ansehen'
 
 chat:

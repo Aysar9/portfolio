@@ -56,6 +56,8 @@ projekte:
     intranet_text: 'Central platform for a manufacturing company – more than 25 modules from ERP reporting to staff planning. Designed, built and operated single-handedly in production.'
     portfolio_title: 'Developer portfolio (this website)'
     portfolio_text: 'This bilingual portfolio site – built independently and run on my own Linux server. Automatic deployment via GitHub Actions, a 100/100/100/100 Lighthouse score and a built-in AI assistant.'
+    jobtrack_title: 'JobTrack API'
+    jobtrack_text: 'A REST API for tracking job application status – containerised with Docker, backed by clean status logic and 15 automated tests.'
 
 projekt_intranet:
     title: 'Internal Intranet Portal – Case Study'
@@ -113,6 +115,32 @@ projekt_portfolio:
     role_text: 'Sole developer and operator: design, frontend, backend, server setup, TLS, deployment pipeline and ongoing operation are entirely my work.'
     result_heading: 'Result'
     result_text: 'A fast, accessible and maintainable website with a perfect Lighthouse score, automatic deployment and an AI assistant – a compact, end-to-end demonstration of my full-stack and DevOps skills.'
+    repo_link: 'View the code on GitHub'
+
+projekt_jobtrack:
+    title: 'JobTrack API – Case Study'
+    back: '← Back to projects'
+    label: 'Case Study'
+    heading: 'A REST API for tracking job applications'
+    intro: 'A REST API that models the full lifecycle of my own job applications – from "applied" to "accepted". Deliberately built as a practice project during my job search to sharpen API design, containerisation and automated testing.'
+    techstack_heading: 'Tech stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.3, Symfony 7, Doctrine ORM'
+    tech_data: '<strong>Database:</strong> MySQL 8'
+    tech_infra: '<strong>Infrastructure:</strong> Docker &amp; Docker Compose (Nginx, PHP-FPM, MySQL as separate containers)'
+    tech_tests: '<strong>Tests:</strong> PHPUnit – unit and functional tests (15 tests)'
+    challenges_heading: 'Challenges & solutions'
+    challenge1_title: '1. Enforcing valid status transitions'
+    challenge1_text: 'An application must not jump from any status to any other (e.g. not directly from "applied" to "accepted"). The transition logic lives as its own business rule in the domain code rather than scattered across the controller, with a dedicated PATCH endpoint for status changes.'
+    challenge2_title: '2. Clean REST design instead of raw CRUD endpoints'
+    challenge2_text: 'Endpoints return consistent HTTP status codes (200, 201, 204, 404, 422) and structured validation errors, so a client can reliably distinguish "invalid input" from "not found".'
+    challenge3_title: '3. Test-driven from the start'
+    challenge3_text: '15 tests cover both the status logic at the unit level and the HTTP endpoints functionally – a deliberate exercise in writing tests alongside functionality instead of afterwards.'
+    challenge4_title: '4. A reproducible environment with Docker'
+    challenge4_text: 'Nginx, PHP-FPM and MySQL run as separate containers via Docker Compose. A single "docker compose up -d --build" plus migrations is enough to run the application identically anywhere.'
+    role_heading: 'My role'
+    role_text: 'Sole developer: API design, domain logic, database modelling, tests and the Docker setup are entirely my work – a deliberate practice project for backend and DevOps skills.'
+    result_heading: 'Result'
+    result_text: 'A working, fully containerised REST API with a clean status lifecycle, consistent HTTP responses and 15 passing tests – a compact demonstration of API design, testing discipline and Docker knowledge.'
     repo_link: 'View the code on GitHub'
 
 chat:

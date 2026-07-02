@@ -42,6 +42,12 @@ final class HomeController extends AbstractController
         return $this->render('home/projekt_portfolio.html.twig');
     }
 
+    #[Route('/projekte/jobtrack-api', name: 'app_projekt_jobtrack')]
+    public function projektJobtrack(): Response
+    {
+        return $this->render('home/projekt_jobtrack.html.twig');
+    }
+
     #[Route('/kontakt', name: 'app_kontakt')]
     public function kontakt(): Response
     {

@@ -55,6 +55,12 @@ final class PortfolioKnowledge
               application in active production use that he develops and extends. Includes user and role
               management and CRUD functionality, and connects to several existing databases. He works on it
               independently as developer and maintainer.
+            - JobTrack API (github.com/Aysar9/jobtrack-api): a REST API for tracking job applications through
+              their lifecycle (applied -> interview -> offer -> accepted), with business logic enforcing only
+              valid status transitions via a dedicated PATCH endpoint. Built solo as a practice project during
+              his job search to deepen Docker, REST API design and automated testing. Stack: PHP 8.3, Symfony 7,
+              Doctrine ORM, MySQL 8, fully containerised with Docker Compose (Nginx, PHP-FPM, MySQL as separate
+              containers). Covered by 15 PHPUnit tests (unit and functional).
 
             TECHNICAL SKILLS:
             - Programming languages: PHP, JavaScript, SQL.

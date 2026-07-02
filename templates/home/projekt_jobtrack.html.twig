@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'projekt_jobtrack.title'|trans }}{% endblock %}
+
+{% block body %}
+<article class="max-w-3xl mx-auto px-6 pt-20 pb-16">
+    <a href="{{ path('app_projekte') }}" class="font-mono text-xs uppercase tracking-[0.15em] text-muted hover:text-primary transition-colors">{{ 'projekt_jobtrack.back'|trans }}</a>
+
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mt-8 mb-5">{{ 'projekt_jobtrack.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6">
+        {{ 'projekt_jobtrack.heading'|trans }}
+    </h1>
+
+    <p class="text-lg text-ink/80 leading-relaxed mb-12">
+        {{ 'projekt_jobtrack.intro'|trans }}
+    </p>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_jobtrack.techstack_heading'|trans }}</h2>
+    <ul class="space-y-2 text-ink/80 leading-relaxed mb-8">
+        <li>{{ 'projekt_jobtrack.tech_backend'|trans|raw }}</li>
+        <li>{{ 'projekt_jobtrack.tech_data'|trans|raw }}</li>
+        <li>{{ 'projekt_jobtrack.tech_infra'|trans|raw }}</li>
+        <li>{{ 'projekt_jobtrack.tech_tests'|trans|raw }}</li>
+    </ul>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-6">{{ 'projekt_jobtrack.challenges_heading'|trans }}</h2>
+
+    <div class="space-y-8">
+        <div>
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_jobtrack.challenge1_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
+                {{ 'projekt_jobtrack.challenge1_text'|trans }}
+            </p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_jobtrack.challenge2_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
+                {{ 'projekt_jobtrack.challenge2_text'|trans }}
+            </p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_jobtrack.challenge3_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
+                {{ 'projekt_jobtrack.challenge3_text'|trans }}
+            </p>
+        </div>
+        <div>
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_jobtrack.challenge4_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">
+                {{ 'projekt_jobtrack.challenge4_text'|trans }}
+            </p>
+        </div>
+    </div>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_jobtrack.role_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed mb-8">
+        {{ 'projekt_jobtrack.role_text'|trans }}
+    </p>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_jobtrack.result_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed">
+        {{ 'projekt_jobtrack.result_text'|trans }}
+    </p>
+
+    <div class="mt-10">
+        <a href="https://github.com/Aysar9/jobtrack-api" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-6 py-3 border border-line rounded-md font-medium text-ink hover:border-primary hover:text-primary transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.21-3.37-1.21-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.27 10.27 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/>
+            </svg>
+            {{ 'projekt_jobtrack.repo_link'|trans }}
+        </a>
+    </div>
+</article>
+{% endblock %}
