@@ -4,7 +4,8 @@ set -e
 echo "🚀 بدء الـ deployment..."
 
 echo "📥 سحب آخر كود من GitHub..."
-git pull origin main
+git fetch origin main
+git reset --hard FETCH_HEAD
 
 echo "📦 تثبيت المكتبات..."
 composer install --no-dev --optimize-autoloader
