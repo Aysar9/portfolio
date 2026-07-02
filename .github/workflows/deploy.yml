@@ -17,4 +17,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/portfolio
+            git fetch origin main
+            git reset --hard FETCH_HEAD
             ./deploy.sh
