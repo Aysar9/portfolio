@@ -41,10 +41,10 @@ home:
 about:
     title: 'About – Aysar Alatrash'
     label: 'About me'
-    heading: 'From career changer to full-stack developer'
-    p1: 'After an IHK retraining as an application development specialist, I now work as a developer at Butting GmbH in Schwedt, where I single-handedly build and maintain an internal intranet platform.'
+    heading: 'I build and operate production systems'
+    p1: 'I independently build and operate a production intranet platform with 25+ modules serving around 100 employees at Butting GmbH in Schwedt. My foundation: an IHK retraining as an application development specialist.'
     p2: 'My focus is on PHP and Symfony – from database modelling and backend logic to the frontend with Twig and Tailwind CSS. Operating Ubuntu servers with Nginx is also part of my daily work.'
-    p3: 'I work in a structured way, document my solutions and keep learning. I am currently deepening my knowledge of Docker, CI/CD and integrating AI features into web applications.'
+    p3: 'My work includes a graphical label designer that removed the need for custom development by the IT department, and an IHK-compliant absence analysis integrated with the HR database. I am currently deepening Docker, CI/CD and AI integration in web applications.'
     cv_download: 'Download CV (PDF)'
     learning_label: 'Currently exploring'
 

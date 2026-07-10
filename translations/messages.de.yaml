@@ -41,10 +41,10 @@ home:
 about:
     title: 'Über mich – Aysar Alatrash'
     label: 'Über mich'
-    heading: 'Vom Quereinstieg zum Full-Stack Entwickler'
-    p1: 'Nach einer IHK-Umschulung zum Fachinformatiker für Anwendungsentwicklung arbeite ich heute als Entwickler bei der Butting GmbH in Schwedt, wo ich eine interne Intranet-Plattform eigenständig entwickle und betreue.'
+    heading: 'Ich baue und betreibe produktive Systeme'
+    p1: 'Ich entwickle und betreibe eigenverantwortlich eine produktive Intranet-Plattform mit über 25 Modulen für rund 100 Mitarbeitende – bei der Butting GmbH in Schwedt. Meine Grundlage: eine IHK-Umschulung zum Fachinformatiker für Anwendungsentwicklung.'
     p2: 'Mein Schwerpunkt liegt auf PHP und Symfony – von der Datenbankmodellierung über die Backend-Logik bis zum Frontend mit Twig und Tailwind CSS. Auch der Betrieb auf Ubuntu-Servern mit Nginx gehört zu meinem Alltag.'
-    p3: 'Ich arbeite strukturiert, dokumentiere meine Lösungen und lerne kontinuierlich dazu. Aktuell vertiefe ich meine Kenntnisse in Docker, CI/CD und der Integration von KI-Funktionen in Web-Anwendungen.'
+    p3: 'Zu meinen Arbeiten zählen ein grafischer Etikettendesigner, der die Individualentwicklung durch die IT überflüssig macht, sowie eine IHK-konforme Fehlzeitenauswertung mit Anbindung an die Personaldatenbank. Aktuell vertiefe ich Docker, CI/CD und KI-Integration in Web-Anwendungen.'
     cv_download: 'Lebenslauf herunterladen (PDF)'
     learning_label: 'Aktuell im Fokus'
 
