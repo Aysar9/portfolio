@@ -61,6 +61,11 @@ final class PortfolioKnowledge
               his job search to deepen Docker, REST API design and automated testing. Stack: PHP 8.3, Symfony 7,
               Doctrine ORM, MySQL 8, fully containerised with Docker Compose (Nginx, PHP-FPM, MySQL as separate
               containers). Covered by 15 PHPUnit tests (unit and functional).
+            - AI Text Summarizer (github.com/Aysar9/AI-Text-zusammenfassen): a small Symfony application built as
+              companion code for a German-language tutorial, exploring Symfony's official AI component. An AI
+              agent summarises any text into three sentences via the OpenAI API (gpt-4o-mini). Stack: PHP 8.4,
+              Symfony 8.1, Symfony AI Bundle v0.11.0 (ai-bundle, ai-agent, ai-open-ai-platform), Twig. Deliberately
+              scoped as a learning demo, not production code.
 
             TECHNICAL SKILLS:
             - Programming languages: PHP, JavaScript, SQL.

@@ -48,6 +48,12 @@ final class HomeController extends AbstractController
         return $this->render('home/projekt_jobtrack.html.twig');
     }
 
+    #[Route('/projekte/ai-text-zusammenfassen', name: 'app_projekt_aitext')]
+    public function projektAitext(): Response
+    {
+        return $this->render('home/projekt_aitext.html.twig');
+    }
+
     #[Route('/kontakt', name: 'app_kontakt')]
     public function kontakt(): Response
     {

@@ -63,6 +63,24 @@
                 {% endfor %}
             </div>
         </a>
+
+        <a href="{{ path('app_projekt_aitext') }}"
+           class="block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
+            <div class="flex items-center justify-between gap-4 mb-3">
+                <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+                    {{ 'projekte.aitext_title'|trans }}
+                </h2>
+                <span aria-hidden="true" class="text-primary translate-x-0 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+            <p class="text-muted mb-5 leading-relaxed">
+                {{ 'projekte.aitext_text'|trans }}
+            </p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                {% for tech in ['Symfony 8.1', 'PHP 8.4', 'Symfony AI', 'OpenAI API'] %}
+                    <span class="px-3 py-1 bg-canvas border border-line rounded-full text-ink/80">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </a>
     </div>
 </section>
 {% endblock %}

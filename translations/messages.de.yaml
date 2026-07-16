@@ -58,6 +58,8 @@ projekte:
     portfolio_text: 'Diese zweisprachige Portfolio-Website – eigenständig entwickelt und auf einem eigenen Linux-Server betrieben. Automatisches Deployment via GitHub Actions, Lighthouse-Score 100/100/100/100 und ein eingebauter KI-Assistent.'
     jobtrack_title: 'JobTrack API'
     jobtrack_text: 'REST-API zur Verwaltung von Bewerbungsstatus – containerisiert mit Docker, mit sauberer Status-Logik und 15 automatisierten Tests abgesichert.'
+    aitext_title: 'AI-Text-Zusammenfasser (Symfony AI)'
+    aitext_text: 'Ein kleiner KI-Agent auf Basis von Symfonys brandneuer offizieller AI-Komponente – fasst beliebige Texte über die OpenAI-API in drei Sätzen zusammen. Begleitcode zu einem Tutorial über das neue AgentInterface.'
 
 projekt_intranet:
     title: 'Internes Intranet-Portal – Case Study'
@@ -141,6 +143,27 @@ projekt_jobtrack:
     role_text: 'Alleiniger Entwickler: API-Design, Domänenlogik, Datenbank-Modellierung, Tests und Docker-Setup stammen vollständig von mir – als gezieltes Übungsprojekt für Backend- und DevOps-Praxis.'
     result_heading: 'Ergebnis'
     result_text: 'Eine funktionierende, vollständig containerisierte REST-API mit sauberem Status-Lifecycle, konsistenten HTTP-Antworten und 15 bestehenden Tests – ein kompakter Nachweis für API-Design, Testdisziplin und Docker-Kenntnisse.'
+    repo_link: 'Code auf GitHub ansehen'
+
+projekt_aitext:
+    title: 'AI-Text-Zusammenfasser – Case Study'
+    back: '← Zurück zu Projekte'
+    label: 'Case Study'
+    heading: 'Mein erster KI-Agent in PHP, gebaut mit Symfony AI'
+    intro: 'Eine kleine Symfony-Anwendung, um Symfonys brandneue offizielle AI-Komponente praktisch kennenzulernen: Ein Agent fasst beliebige Texte über die OpenAI-API (gpt-4o-mini) in drei Sätzen zusammen. Entstanden als Begleitcode zu einem deutschsprachigen Tutorial, das ich aufgenommen habe – ein kompaktes, ehrliches Demo statt einer Produktivanwendung, bei dem das neue AgentInterface end-to-end verdrahtet ist.'
+    techstack_heading: 'Tech-Stack'
+    tech_backend: '<strong>Backend:</strong> PHP 8.4, Symfony 8.1'
+    tech_ai: '<strong>KI:</strong> Symfony AI Bundle v0.11.0 (ai-bundle, ai-agent, ai-open-ai-platform) mit OpenAI gpt-4o-mini'
+    tech_frontend: '<strong>Frontend:</strong> Twig, Symfony UX Turbo'
+    challenges_heading: 'Herausforderungen & Lösungen'
+    challenge1_title: '1. Symfony AI ist ein Baukasten aus 70+ Paketen, nicht eines'
+    challenge1_text: 'Das ai-bundle allein reicht nicht. Dazu kommen die Agent-Komponente ai-agent (Agent, MessageBag) und eine separate Anbieter-Bridge (hier: ai-open-ai-platform). Der Vorteil: Ein späterer Anbieterwechsel – Anthropic, Gemini, ein lokales Ollama-Modell – bedeutet nur das Austauschen der Bridge, nicht das Umschreiben der eigenen Anwendungslogik.'
+    challenge2_title: '2. Turbo schluckt die Antwort'
+    challenge2_text: 'Das Symfony-Webapp-Skeleton bringt Symfony UX Turbo mit, das nach einem Formular-POST einen Redirect erwartet. Ohne data-turbo="false" am &lt;form&gt; antwortet der Server zwar korrekt, im Browser erscheint aber nichts – eine gute Erinnerung, bei „die UI tut nichts" den Network-Tab statt nur die Server-Logs zu prüfen.'
+    role_heading: 'Meine Rolle'
+    role_text: 'Alleiniger Entwickler – gebaut, um Symfonys neue AI-Integrationsschicht praktisch zu lernen, bevor ich sie in einem echten Projekt einsetze. Begleitcode zu einem deutschsprachigen YouTube-Tutorial, das ich aufgenommen habe. Produktionsthemen (Formular-Validierung, CSRF, Fehlerbehandlung, Streaming) habe ich bewusst weggelassen, da sie nicht der Punkt der Übung waren.'
+    result_heading: 'Ergebnis'
+    result_text: 'Ein minimaler, funktionierender KI-Agent – vom Formular über den Agent und OpenAI bis zu Twig – plus zwei dokumentierte Stolpersteine für den nächsten Entwickler (und mein zukünftiges Ich), der mit Symfony AI arbeitet.'
     repo_link: 'Code auf GitHub ansehen'
 
 chat:
