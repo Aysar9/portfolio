@@ -12,6 +12,7 @@ meta:
     og_description: 'PHP / Symfony developer. Production web applications from backend to frontend.'
 
 layout:
+    skip_content: 'Skip to content'
     location: 'Schwedt, Germany'
 
 footer:
@@ -25,6 +26,22 @@ datenschutz:
     title: 'Privacy Policy'
 
 home:
+    notebook_label: 'Notes from a full-stack developer'
+    greeting: 'Hello, I’m'
+    notebook_intro: 'I build web applications with PHP and Symfony — and make sure they keep running in everyday use.'
+    notebook_detail: 'For example, an intranet for a manufacturing company: over 25 modules, from the database backend to the frontend and server operations. Independently developed and maintained.'
+    note_label: 'Personal note'
+    note_title: 'From backend to operations.'
+    note_text: 'I like it when everything fits together.'
+    tools_heading: 'My toolbox'
+    tools_note: 'From the data model to deployment — it all belongs together.'
+    work_heading: 'A look at my work'
+    case_study: 'The story behind it'
+    stamp_title: 'In use.'
+    stamp_text: 'A production project.'
+    jobtrack_note: 'Application statuses, Docker and 15 automated tests.'
+    view_project: 'Take a look'
+    next_chapter: 'Room for the next chapter.'
     title: 'Aysar Alatrash – Full-Stack Developer (PHP / Symfony)'
     badge: 'Full-Stack Developer'
     intro: 'I single-handedly built and operate a production intranet platform with 25+ modules for a manufacturing company – from the database backend and Symfony logic to the frontend and server operations.'

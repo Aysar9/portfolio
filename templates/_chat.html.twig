@@ -1,5 +1,5 @@
 {# AI assistant widget — grounded in Aysar's portfolio content via Gemini #}
-<div data-controller="chat"
+<div class="notebook-chat" data-controller="chat"
      data-chat-endpoint-value="{{ path('app_chat') }}"
      data-chat-error-value="{{ 'chat.error'|trans }}">
 
@@ -43,6 +43,7 @@
                    type="text"
                    autocomplete="off"
                    placeholder="{{ 'chat.placeholder'|trans }}"
+                   aria-label="{{ 'chat.placeholder'|trans }}"
                    class="flex-1 rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink focus:border-primary focus:outline-none"
                    maxlength="1000">
             <button type="submit"
