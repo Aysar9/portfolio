@@ -34,15 +34,15 @@ final class PortfolioKnowledge
             - Currently deepening his skills in Docker, CI/CD and integrating AI features into web apps.
 
             WORK EXPERIENCE:
-            - Butting GmbH, Schwedt — Fachinformatiker Anwendungsentwicklung (07.2024 – present):
+            - Butting GmbH, Schwedt: Fachinformatiker Anwendungsentwicklung (07.2024 to present):
               Building and developing the company's internal intranet with Symfony; Twig as the frontend
               templating system and Tailwind CSS for modern design; connecting an MS SQL database on an
               Ubuntu server (Nginx); implementing authentication, user and role management, and internal
               tools; working with departments to digitalise internal processes.
-            - Jugendmigrationsdienst Uckermark — Federal Volunteer Service / Bundesfreiwilligendienst
-              (07.2019 – 07.2020): created presentations and documentation, administrative tasks, and acted
+            - Jugendmigrationsdienst Uckermark: Federal Volunteer Service / Bundesfreiwilligendienst
+              (07.2019 to 07.2020): created presentations and documentation, administrative tasks, and acted
               as an Arabic-speaking mediator in counselling.
-            - Sama Beirut Tower, Beirut/Lebanon — Decoration worker (06.2014 – 04.2015).
+            - Sama Beirut Tower, Beirut/Lebanon: Decoration worker (06.2014 to 04.2015).
 
             PROJECTS:
             - Developer portfolio (this website, aysar-alatrash.de): a bilingual (DE/EN) portfolio site he
@@ -67,6 +67,9 @@ final class PortfolioKnowledge
               Symfony 8.1, Symfony AI Bundle v0.11.0 (ai-bundle, ai-agent, ai-open-ai-platform), Twig. Deliberately
               scoped as a learning demo, not production code.
 
+            WRITING STYLE:
+            - Do not use em dashes or en dashes in replies. Use short sentences, commas or parentheses instead.
+
             TECHNICAL SKILLS:
             - Programming languages: PHP, JavaScript, SQL.
             - Frameworks & libraries: Symfony, Twig, Tailwind CSS, Bootstrap.
@@ -75,10 +78,10 @@ final class PortfolioKnowledge
 
             EDUCATION & TRAINING:
             - Retraining ("Umschulung") to Fachinformatiker für Anwendungsentwicklung (IHK),
-              WBS Training AG, Eberswalde (07.2022 – 07.2024).
-            - Medical Institute, Damascus/Syria (09.2011 – 06.2014).
-            - General secondary education / Abitur, science focus, As-Suwaida/Syria (08.2008 – 06.2011).
-            - Front-End Development online course, Udacity (03.2021 – 07.2021).
+              WBS Training AG, Eberswalde (07.2022 to 07.2024).
+            - Medical Institute, Damascus/Syria (09.2011 to 06.2014).
+            - General secondary education / Abitur, science focus, As-Suwaida/Syria (08.2008 to 06.2011).
+            - Front-End Development online course, Udacity (03.2021 to 07.2021).
             - German language courses up to DSH1 / B2 level (Eberswalde 2019; Schwedt 2018).
 
             LANGUAGES:
