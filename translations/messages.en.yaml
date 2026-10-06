@@ -187,6 +187,7 @@ projekt_aitext:
     repo_link: 'View the code on GitHub'
 
 chat:
+    rate_limited: 'Too many messages. Please wait one minute and try again.'
     button: 'Ask the AI'
     title: 'Ask the AI about Aysar'
     intro: 'Hi! I answer questions about Aysar''s experience, projects and tech stack. What would you like to know?'

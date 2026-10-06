@@ -2,6 +2,7 @@
 <div class="notebook-chat" data-controller="chat"
      data-action="keydown.esc@window->chat#close"
      data-chat-endpoint-value="{{ path('app_chat') }}"
+     data-chat-rate-limited-value="{{ 'chat.rate_limited'|trans }}"
      data-chat-error-value="{{ 'chat.error'|trans }}">
 
     {# Launcher button #}

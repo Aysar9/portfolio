@@ -187,6 +187,7 @@ projekt_aitext:
     repo_link: 'Code auf GitHub ansehen'
 
 chat:
+    rate_limited: 'Zu viele Nachrichten. Bitte warten Sie eine Minute und versuchen Sie es erneut.'
     button: 'Frag die KI'
     title: 'Frag die KI über Aysar'
     intro: 'Hallo! Ich beantworte Fragen zu Aysars Erfahrung, Projekten und Tech-Stack. Was möchten Sie wissen?'

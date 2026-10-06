@@ -151,15 +151,22 @@ final class ChatController extends AbstractController
         $key = 'chat_rl_' . sha1((string) $request->getClientIp());
         $item = $this->cache->getItem($key);
 
-        $count = $item->isHit() ? (int) $item->get() : 0;
-        if ($count >= self::RATE_LIMIT) {
+        $now = time();
+        $window = $item->isHit() ? $item->get() : null;
+
+        // Old integer counters have no reliable expiry; start a fresh window.
+        if (!is_array($window) || ($window['expiresAt'] ?? 0) <= $now) {
+            $window = ['count' => 0, 'expiresAt' => $now + self::RATE_WINDOW];
+        }
+
+        if ($window['count'] >= self::RATE_LIMIT) {
             return false;
         }
 
-        if (!$item->isHit()) {
-            $item->expiresAfter(self::RATE_WINDOW);
-        }
-        $item->set($count + 1);
+        ++$window['count'];
+        $item->set($window);
+        // Reapply the original deadline on every save, without extending it.
+        $item->expiresAt(new \DateTimeImmutable('@' . $window['expiresAt']));
         $this->cache->save($item);
 
         return true;

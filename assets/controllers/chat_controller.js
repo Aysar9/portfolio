@@ -6,7 +6,7 @@ import { Controller } from '@hotwired/stimulus';
  */
 export default class extends Controller {
     static targets = ['launcher', 'panel', 'messages', 'input', 'submit'];
-    static values = { endpoint: String, error: String };
+    static values = { endpoint: String, error: String, rateLimited: String };
 
     connect() {
         this.history = [];
@@ -57,7 +57,7 @@ export default class extends Controller {
                 this.history.push({ role: 'user', text });
                 this.history.push({ role: 'model', text: data.reply });
             } else {
-                this.appendMessage('error', this.errorValue);
+                this.appendMessage('error', response.status === 429 ? this.rateLimitedValue : this.errorValue);
             }
         } catch (e) {
             typing.remove();
