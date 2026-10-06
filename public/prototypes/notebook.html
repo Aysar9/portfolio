@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Aysars Notizbuch — Design-Prototyp</title>
+  <style>
+    @font-face { font-family: Inter; src: url('../fonts/inter-400.woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: Inter; src: url('../fonts/inter-600.woff2'); font-weight: 600; font-display: swap; }
+    :root { --desk: #e4dfd3; --paper: #fffdf3; --ink: #283747; --blue: #244e83; --muted: #56616a; --rule: #829daf29; --red: #b5514f; --hand: 'Segoe Print', 'Bradley Hand', 'Chalkboard SE', 'Comic Sans MS', cursive; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--desk); color: var(--ink); font: 15px/1.8 Inter, system-ui, sans-serif; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+    button { font: inherit; cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 6px; }
+    .skip { position: absolute; left: 16px; top: -100px; background: var(--paper); padding: 8px; z-index: 10; }
+    .skip:focus { top: 12px; }
+    .preview { max-width: 1080px; margin: 18px auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; gap: 14px; font-size: 12px; color: #414a50; }
+    .preview button { border: 1px solid #969c99; background: transparent; border-radius: 4px; padding: 5px 12px; font-size: 12px; }
+    .notebook { max-width: 1080px; margin: 0 auto 44px; position: relative; background-color: var(--paper); background-image: repeating-linear-gradient(transparent 0 31px, var(--rule) 31px 32px); box-shadow: 0 18px 50px #473c2620, 5px 5px 0 -1px #f6f2e6, 6px 6px 0 #c7bfae; border: 1px solid #cfc8b7; }
+    .notebook::before { content: ''; position: absolute; left: 75px; top: 0; bottom: 0; border-left: 1px solid #c4797266; pointer-events: none; }
+    .holes { position: absolute; inset: 0 auto 0 25px; width: 15px; pointer-events: none; background: radial-gradient(circle at 7px 110px, var(--desk) 0 6px, #bdb6a9 6.5px, transparent 7.5px) 0 0 / 15px 230px repeat-y; }
+    .page { margin-left: 76px; padding: 0 50px; }
+    header { padding-top: 32px !important; padding-bottom: 24px !important; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .signature { font: 26px/1.4 var(--hand); color: var(--blue); text-decoration: none; transform: rotate(-3deg); white-space: nowrap; }
+    nav { display: flex; gap: 25px; flex-wrap: wrap; font: 18px/1.5 var(--hand); }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .nav-current { border-bottom: 2px solid var(--red); transform: rotate(-2deg); }
+    .hero { position: relative; padding-top: 48px; padding-bottom: 68px; display: grid; grid-template-columns: minmax(0, 1fr) 215px; gap: 30px; align-items: start; }
+    .eyebrow { font: 19px/1.5 var(--hand); color: var(--muted); margin: 0 0 17px; }
+    h1 { font: 500 clamp(44px, 5.5vw, 66px)/1.35 var(--hand); color: var(--blue); margin: 0 0 25px; letter-spacing: -2px; transform: rotate(-1.5deg); }
+    .highlight { background: linear-gradient(transparent 62%, #f2d57899 62% 88%, transparent 88%); padding: 0 4px; }
+    .intro { max-width: 570px; margin: 0 0 16px; }
+    .detail { color: var(--muted); max-width: 555px; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 23px; align-items: center; margin-top: 32px; }
+    .ink-button { display: inline-block; padding: 8px 21px; border: 2px solid var(--blue); border-radius: 3px 7px 4px 6px; box-shadow: 3px 3px 0 #244e8325; color: var(--blue); text-decoration: none; font: 21px/1.5 var(--hand); transform: rotate(-1deg); }
+    .ink-button:hover { background: #244e830b; }
+    .text-link { color: var(--blue); font: 20px/1.5 var(--hand); }
+    .sticky { position: relative; background: #f3df96; padding: 27px 22px 24px; margin-top: 22px; box-shadow: 2px 5px 7px #584d2320; transform: rotate(4deg); font: 20px/1.55 var(--hand); color: #424032; }
+    .sticky::before { content: ''; position: absolute; width: 92px; height: 24px; background: #d9d0b777; border: 1px solid #d4c9ad55; top: -12px; left: 53px; transform: rotate(-8deg); }
+    .sticky p { margin: 0; }
+    .sticky strong { font-size: 23px; font-weight: 600; }
+    .sticky small { display: block; font: 16px/1.5 var(--hand); margin-top: 13px; }
+    .doodle { width: 125px; height: 51px; color: var(--blue); margin: 8px 0 0 -25px; transform: rotate(-7deg); }
+    .section { padding-top: 30px; padding-bottom: 42px; border-top: 1px dashed #7d8d9966; }
+    .section-title { display: flex; align-items: baseline; gap: 18px; margin-bottom: 26px; }
+    .number { color: var(--red); font: 18px/1.5 var(--hand); }
+    h2 { font: 500 33px/1.5 var(--hand); color: var(--blue); margin: 0; }
+    .stack { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-left: 40px; }
+    .stack span { font: 21px/1.5 var(--hand); }
+    .stack span::before { content: '✓'; color: #426650; margin-right: 8px; }
+    .pencil-note { font: 17px/1.6 var(--hand); color: var(--muted); margin: 21px 0 0 40px; }
+    .project { display: grid; grid-template-columns: 1fr 160px; gap: 30px; padding-left: 40px; }
+    .project h3 { font: 500 29px/1.4 var(--hand); margin: 0 0 13px; }
+    .project p { max-width: 560px; margin: 0 0 20px; }
+    .tags { font: 12px/1.8 Inter, system-ui, sans-serif; color: var(--muted); margin-bottom: 21px; }
+    .stamp { align-self: start; border: 2px solid #557159; color: #3d5c42; font: 21px/1.4 var(--hand); padding: 13px 10px; text-align: center; transform: rotate(-7deg); margin-top: 25px; border-radius: 4px 1px 6px 3px; }
+    .stamp small { display: block; font-size: 16px; }
+    .other-project { margin: 30px 0 0 40px; padding-top: 21px; border-top: 1px solid #829daf44; display: flex; gap: 20px; align-items: baseline; justify-content: space-between; }
+    .other-project h3 { font: 25px/1.4 var(--hand); margin: 0 0 5px; }
+    .other-project p { color: var(--muted); margin: 0; font-size: 13px; }
+    .contact { padding-bottom: 52px; }
+    .contact p { margin-left: 40px; max-width: 620px; }
+    .contact .actions { margin-left: 40px; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; border-top: 1px dashed #7d8d9966; padding-top: 21px !important; padding-bottom: 22px !important; color: var(--muted); font-size: 11px; }
+    footer div { display: flex; gap: 18px; }
+    .folio { font: 17px/1.5 var(--hand); }
+    body.all-hand .intro, body.all-hand .detail, body.all-hand .project p, body.all-hand .contact p { font: 21px/1.65 var(--hand); }
+    @media (max-width: 760px) {
+      .preview { margin: 12px auto; padding: 0 18px; }
+      .notebook { margin: 0 12px 30px; }
+      .notebook::before { left: 32px; }
+      .holes { left: 9px; width: 13px; }
+      .page { margin-left: 33px; padding-left: 24px; padding-right: 24px; }
+      header { align-items: flex-start; flex-direction: column; gap: 15px; }
+      nav { gap: 20px; font-size: 17px; }
+      .hero { grid-template-columns: 1fr; padding-top: 23px; padding-bottom: 38px; gap: 16px; }
+      h1 { letter-spacing: -1px; font-size: clamp(36px, 8vw, 54px); }
+      .sticky { max-width: 250px; margin: 10px 12px 0 auto; transform: rotate(2deg); }
+      .doodle { display: none; }
+      .project { grid-template-columns: 1fr; gap: 8px; padding-left: 0; }
+      .stamp { justify-self: start; margin: 0 0 15px; padding: 7px 20px; }
+      .stack, .pencil-note, .other-project, .contact p, .contact .actions { margin-left: 0; }
+      .other-project { flex-direction: column; gap: 12px; }
+      h2 { font-size: 28px; }
+      .section-title { gap: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print { body { background: white; } .preview, .holes { display: none; } .notebook { box-shadow: none; border: 0; margin: 0; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#start">Zum Inhalt</a>
+  <div class="preview">
+    <span>Designstudie · Notizbuch / 01</span>
+    <button id="hand-toggle" type="button" aria-pressed="false">Alles handschriftlich</button>
+  </div>
+  <div class="notebook">
+    <div class="holes" aria-hidden="true"></div>
+    <header class="page">
+      <a class="signature" href="#start" aria-label="Aysar Alatrash — Start">Aysar A.</a>
+      <nav aria-label="Hauptnavigation">
+        <a class="nav-current" href="#start">Start</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero page" id="start" aria-labelledby="intro-title">
+        <div id="ueber-mich">
+          <p class="eyebrow">Notizen eines Full-Stack Entwicklers</p>
+          <h1 id="intro-title">Hallo, ich bin<br><span class="highlight">Aysar Alatrash.</span></h1>
+          <p class="intro">Ich entwickle Web-Anwendungen mit PHP und Symfony — und kümmere mich auch darum, dass sie im Alltag laufen.</p>
+          <p class="detail">Zum Beispiel ein Intranet für einen Fertigungsbetrieb: über 25 Module, vom Datenbank-Backend bis zum Frontend und Server-Betrieb. Eigenständig entwickelt und betreut.</p>
+          <div class="actions">
+            <a class="ink-button" href="#projekte">Meine Projekte ↓</a>
+            <a class="text-link" href="#kontakt">Schreiben Sie mir ↗</a>
+          </div>
+        </div>
+        <aside aria-label="Persönliche Notiz">
+          <div class="sticky">
+            <p><strong>Vom Backend<br>bis zum Betrieb.</strong><br>Ich mag es, wenn<br>alles zusammenpasst.</p>
+            <small>Schwedt, Deutschland</small>
+          </div>
+          <svg class="doodle" viewBox="0 0 125 51" fill="none" aria-hidden="true"><path d="M118 7C110 43 50 43 8 23M8 23l16-2M8 23l11 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </aside>
+      </section>
+      <section class="section page" aria-labelledby="tools-title">
+        <div class="section-title"><span class="number" aria-hidden="true">01 /</span><h2 id="tools-title">Mein Werkzeugkasten</h2></div>
+        <div class="stack"><span>PHP 8</span><span>Symfony</span><span>Doctrine</span><span>Twig</span><span>MySQL / MS-SQL</span><span>JavaScript</span><span>Tailwind CSS</span><span>Linux / Nginx</span><span>Git</span><span>Docker</span></div>
+        <p class="pencil-note">Vom Datenmodell bis zum Deployment — das gehört für mich zusammen.</p>
+      </section>
+      <section class="section page" id="projekte" aria-labelledby="projects-title">
+        <div class="section-title"><span class="number" aria-hidden="true">02 /</span><h2 id="projects-title">Ein Blick in meine Arbeit</h2></div>
+        <article class="project">
+          <div>
+            <h3>Internes Intranet-Portal</h3>
+            <p>Eine zentrale Plattform für einen Fertigungsbetrieb. Über 25 Module bündeln Abläufe wie ERP-Reporting und Personalplanung — eigenständig konzipiert, entwickelt und im Produktivbetrieb.</p>
+            <div class="tags">Symfony 7.4 · Doctrine DBAL · LDAP · Symfony Messenger</div>
+            <a class="text-link" href="/de/projekte/intranet-portal">Die Geschichte dahinter ↗</a>
+          </div>
+          <div class="stamp">Im Einsatz.<small>Kein Übungsprojekt.</small></div>
+        </article>
+        <article class="other-project">
+          <div><h3>JobTrack API</h3><p>Bewerbungsstatus, Docker und 15 automatisierte Tests.</p></div>
+          <a class="text-link" href="/de/projekte/jobtrack-api">Ansehen ↗</a>
+        </article>
+      </section>
+      <section class="section contact page" id="kontakt" aria-labelledby="contact-title">
+        <div class="section-title"><span class="number" aria-hidden="true">03 /</span><h2 id="contact-title">Platz für das nächste Kapitel.</h2></div>
+        <p>Sie suchen einen Full-Stack Entwickler mit PHP- und Symfony-Erfahrung? Ich bin offen für neue Herausforderungen in Deutschland oder remote.</p>
+        <div class="actions"><a class="ink-button" href="mailto:aysar.it.it@gmail.com">Lassen Sie uns sprechen ↗</a><a class="text-link" href="https://github.com/Aysar9">GitHub</a></div>
+      </section>
+    </main>
+    <footer class="page"><span>© 2026 Aysar Alatrash · Schwedt, Deutschland</span><div><a href="/de/impressum">Impressum</a><a href="/de/datenschutz">Datenschutz</a><span class="folio">Seite 01</span></div></footer>
+  </div>
+  <script>
+    // Prototype-only comparison: switch the longer passages to handwriting.
+    const toggle = document.getElementById('hand-toggle');
+    toggle.addEventListener('click', () => {
+      const enabled = document.body.classList.toggle('all-hand');
+      toggle.setAttribute('aria-pressed', String(enabled));
+      toggle.textContent = enabled ? 'Lesbare Textschrift' : 'Alles handschriftlich';
+    });
+  </script>
+</body>
+</html>

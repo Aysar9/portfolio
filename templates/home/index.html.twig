@@ -1,27 +1,28 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ 'home.title'|trans }}{% endblock %}
+{% block main_attributes %}data-controller="notebook-motion" data-action="focusin->notebook-motion#revealFocusedSection turbo:before-cache@document->notebook-motion#finish"{% endblock %}
 {% block body %}
 <section class="notebook-hero" aria-labelledby="home-heading">
     <div>
-        <p class="notebook-eyebrow">{{ 'home.notebook_label'|trans }}</p>
-        <h1 id="home-heading" class="notebook-hello font-display">{{ 'home.greeting'|trans }}<br><span class="notebook-highlight">Aysar Alatrash.</span></h1>
-        <p class="notebook-intro">{{ 'home.notebook_intro'|trans }}</p>
-        <p class="notebook-detail">{{ 'home.notebook_detail'|trans }}</p>
-        <div class="notebook-actions">
+        <p class="notebook-eyebrow" data-notebook-motion-target="intro">{{ 'home.notebook_label'|trans }}</p>
+        <h1 id="home-heading" class="notebook-hello font-display" aria-label="{{ 'home.greeting'|trans }} Aysar Alatrash."><span aria-hidden="true" data-notebook-motion-target="writing">{{ 'home.greeting'|trans }}</span><br><span aria-hidden="true" class="notebook-highlight" data-notebook-motion-target="writing">Aysar Alatrash.</span></h1>
+        <p class="notebook-intro" data-notebook-motion-target="intro">{{ 'home.notebook_intro'|trans }}</p>
+        <p class="notebook-detail" data-notebook-motion-target="intro">{{ 'home.notebook_detail'|trans }}</p>
+        <div class="notebook-actions" data-notebook-motion-target="intro">
             <a href="{{ path('app_projekte') }}" class="notebook-button">{{ 'home.cta_projects'|trans }} <span aria-hidden="true">↓</span></a>
             <a href="{{ path('app_kontakt') }}" class="notebook-link">{{ 'home.cta_contact'|trans }} <span aria-hidden="true">↗</span></a>
         </div>
     </div>
     <aside class="notebook-margin-note" aria-label="{{ 'home.note_label'|trans }}">
-        <div class="notebook-sticky">
+        <div class="notebook-sticky" data-notebook-motion-target="sticker">
             <p class="notebook-sticky-title">{{ 'home.note_title'|trans }}</p>
             <p>{{ 'home.note_text'|trans }}</p>
             <small>{{ 'layout.location'|trans }}</small>
         </div>
-        <svg class="notebook-arrow" viewBox="0 0 125 51" fill="none" aria-hidden="true"><path d="M118 7C110 43 50 43 8 23M8 23l16-2M8 23l11 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="notebook-arrow" viewBox="0 0 125 51" fill="none" aria-hidden="true"><path data-notebook-motion-target="arrow" d="M118 7C110 43 50 43 8 23M8 23l16-2M8 23l11 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </aside>
 </section>
-<section class="notebook-section" aria-labelledby="tools-heading">
+<section class="notebook-section" data-notebook-motion-target="section" aria-labelledby="tools-heading">
     <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">01 /</span><h2 id="tools-heading" class="font-display">{{ 'home.tools_heading'|trans }}</h2></div>
     <ul class="notebook-tools">
         {% for tech in ['PHP 8', 'Symfony', 'Doctrine', 'Twig', 'MySQL / MS-SQL', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Linux / Nginx', 'Git', 'Docker / Docker Compose'] %}
@@ -30,7 +31,7 @@
     </ul>
     <p class="notebook-pencil-note">{{ 'home.tools_note'|trans }}</p>
 </section>
-<section class="notebook-section" aria-labelledby="projects-heading">
+<section class="notebook-section" data-notebook-motion-target="section" aria-labelledby="projects-heading">
     <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">02 /</span><h2 id="projects-heading" class="font-display">{{ 'home.work_heading'|trans }}</h2></div>
     <article class="notebook-featured">
         <div>
@@ -46,7 +47,7 @@
         <a href="{{ path('app_projekt_jobtrack') }}" class="notebook-link">{{ 'home.view_project'|trans }} <span aria-hidden="true">↗</span></a>
     </article>
 </section>
-<section class="notebook-section notebook-contact" aria-labelledby="contact-heading">
+<section class="notebook-section notebook-contact" data-notebook-motion-target="section" aria-labelledby="contact-heading">
     <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">03 /</span><h2 id="contact-heading" class="font-display">{{ 'home.next_chapter'|trans }}</h2></div>
     <p>{{ 'home.cta_text'|trans }}</p>
     <div class="notebook-actions"><a href="{{ path('app_kontakt') }}" class="notebook-button">{{ 'home.cta_button'|trans }} <span aria-hidden="true">↗</span></a><a href="https://github.com/Aysar9" class="notebook-link">GitHub</a></div>

@@ -110,6 +110,7 @@ body { background: var(--notebook-desk); line-height: 1.8; }
 .notebook-eyebrow { font: 23px/1.5 var(--font-display); color: var(--color-muted); margin: 0 0 17px; }
 .notebook-main .notebook-hello { font-size: clamp(48px, 5.5vw, 72px); line-height: 1.15; margin: 0 0 25px; }
 .notebook-highlight { background: linear-gradient(transparent 62%, var(--notebook-highlight) 62% 88%, transparent 88%); padding: 0 4px; }
+.notebook-writing-word { display: inline-block; white-space: nowrap; }
 .notebook-intro { max-width: 570px; margin: 0 0 16px; }
 .notebook-detail { color: var(--color-muted); max-width: 555px; margin: 0; }
 .notebook-actions { display: flex; flex-wrap: wrap; gap: 23px; align-items: center; margin-top: 32px; }
@@ -154,9 +155,7 @@ body { background: var(--notebook-desk); line-height: 1.8; }
 .notebook-chat > button, .notebook-chat form button { transition: background-color var(--notebook-motion) ease, transform var(--notebook-motion) var(--notebook-ease); }
 .notebook-chat > button:active, .notebook-chat form button:active:not(:disabled) { transform: translateY(1px); }
 /* Entry animations never hide content persistently or require JavaScript. */
-.notebook-hero > div { animation: notebook-intro-in 250ms var(--notebook-ease); }
 .notebook-chat #chat-panel:not([hidden]) { animation: notebook-chat-in 180ms var(--notebook-ease); }
-@keyframes notebook-intro-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes notebook-chat-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (hover: hover) and (pointer: fine) {
     .notebook-paper-card:hover { transform: translateY(-2px); border-color: var(--color-primary); box-shadow: 0 6px 14px #28374712; }
@@ -191,7 +190,7 @@ body { background: var(--notebook-desk); line-height: 1.8; }
 }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .notebook-hero > div, .notebook-chat #chat-panel:not([hidden]) { animation: none; }
+    .notebook-chat #chat-panel:not([hidden]) { animation: none; }
     .notebook-shell *, .notebook-chat * { transition: none; }
     .notebook-paper-card:hover, .notebook-paper-card:active, .notebook-button:active, .notebook-chat button:active { transform: none; }
     .notebook-paper-card [aria-hidden="true"] { translate: none; }
@@ -200,4 +199,7 @@ body { background: var(--notebook-desk); line-height: 1.8; }
     body { background: white; }
     .notebook-shell { box-shadow: none; border: 0; margin: 0; }
     .notebook-holes, .notebook-chat, [data-controller="theme"], [data-navbar-target="button"] { display: none; }
+    [data-notebook-motion-target], [data-notebook-motion-target="writing"] span { opacity: 1 !important; }
+    [data-notebook-motion-target="section"], [data-notebook-motion-target="intro"] { transform: none !important; }
+    [data-notebook-motion-target="arrow"] { stroke-dashoffset: 0 !important; }
 }
