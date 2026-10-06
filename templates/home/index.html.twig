@@ -4,6 +4,7 @@
 <section class="notebook-hero" aria-labelledby="home-heading">
     <div>
         <p class="notebook-eyebrow" data-notebook-motion-target="intro">{{ 'home.notebook_label'|trans }}</p>
+        <p class="notebook-role-label" data-notebook-motion-target="intro">{{ 'home.badge'|trans }} <span aria-hidden="true">/</span> PHP &amp; Symfony</p>
         <h1 id="home-heading" class="notebook-hello font-display" aria-label="{{ 'home.greeting'|trans }} Aysar Alatrash."><span aria-hidden="true" data-notebook-motion-target="writing">{{ 'home.greeting'|trans }}</span><br><span aria-hidden="true" class="notebook-highlight" data-notebook-motion-target="writing">Aysar Alatrash.</span></h1>
         <p class="notebook-intro" data-notebook-motion-target="intro">{{ 'home.notebook_intro'|trans }}</p>
         <p class="notebook-detail" data-notebook-motion-target="intro">{{ 'home.notebook_detail'|trans }}</p>
@@ -26,17 +27,8 @@
         </div>
     </aside>
 </section>
-<section class="notebook-section" data-notebook-motion-target="section" aria-labelledby="tools-heading">
-    <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">01 /</span><h2 id="tools-heading" class="font-display">{{ 'home.tools_heading'|trans }}</h2></div>
-    <ul class="notebook-tools">
-        {% for tech in ['PHP 8', 'Symfony', 'Doctrine', 'Twig', 'MySQL / MS-SQL', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Linux / Nginx', 'Git', 'Docker / Docker Compose'] %}
-            <li>{{ tech }}</li>
-        {% endfor %}
-    </ul>
-    <p class="notebook-pencil-note">{{ 'home.tools_note'|trans }}</p>
-</section>
 <section class="notebook-section" data-notebook-motion-target="section" aria-labelledby="projects-heading">
-    <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">02 /</span><h2 id="projects-heading" class="font-display">{{ 'home.work_heading'|trans }}</h2></div>
+    <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">01 /</span><h2 id="projects-heading" class="font-display">{{ 'home.work_heading'|trans }}</h2></div>
     <article class="notebook-featured">
         <div>
             <h3 class="font-display">{{ 'home.featured_title'|trans }}</h3>
@@ -50,6 +42,15 @@
         <div><h3 class="font-display">{{ 'projekte.jobtrack_title'|trans }}</h3><p>{{ 'home.jobtrack_note'|trans }}</p></div>
         <a href="{{ path('app_projekt_jobtrack') }}" class="notebook-link">{{ 'home.view_project'|trans }} <span aria-hidden="true">↗</span></a>
     </article>
+</section>
+<section class="notebook-section" data-notebook-motion-target="section" aria-labelledby="tools-heading">
+    <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">02 /</span><h2 id="tools-heading" class="font-display">{{ 'home.tools_heading'|trans }}</h2></div>
+    <ul class="notebook-tools">
+        {% for tech in ['PHP 8', 'Symfony', 'Doctrine', 'Twig', 'MySQL / MS-SQL', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Linux / Nginx', 'Git', 'Docker / Docker Compose'] %}
+            <li>{{ tech }}</li>
+        {% endfor %}
+    </ul>
+    <p class="notebook-pencil-note">{{ 'home.tools_note'|trans }}</p>
 </section>
 <section class="notebook-section notebook-contact" data-notebook-motion-target="section" aria-labelledby="contact-heading">
     <div class="notebook-section-title"><span class="notebook-number" aria-hidden="true">03 /</span><h2 id="contact-heading" class="font-display">{{ 'home.next_chapter'|trans }}</h2></div>

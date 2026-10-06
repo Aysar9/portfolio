@@ -49,7 +49,7 @@ home:
     tech_label: 'Technologien, mit denen ich täglich arbeite:'
     featured_label: 'Ausgewähltes Projekt'
     featured_title: 'Internes Intranet-Portal'
-    featured_text: 'Eine zentrale Plattform für einen Fertigungsbetrieb mit über 25 Modulen. Eigenständig konzipiert, entwickelt und im Produktivbetrieb. Symfony 7.4, Doctrine DBAL, LDAP-Anbindung und asynchrone Verarbeitung.'
+    featured_text: 'Eine zentrale Plattform für einen Fertigungsbetrieb mit über 25 Modulen. Eigenständig konzipiert, entwickelt und im Produktivbetrieb.'
     cta_title: 'Auf der Suche nach Verstärkung?'
     cta_text: 'Ich bin offen für neue Herausforderungen als Full-Stack Entwickler im Raum Deutschland oder remote.'
     cta_button: 'Lassen Sie uns sprechen'

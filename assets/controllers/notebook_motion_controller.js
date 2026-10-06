@@ -18,27 +18,34 @@ export default class extends Controller {
             if (this.element.dataset.notebookMotionPlayed === 'true') return;
             this.element.dataset.notebookMotionPlayed = 'true';
 
-            const characters = this.splitWriting();
+            // The greeting writes in; page titles appear together for faster reading.
+            const isHomepage = Boolean(this.element.querySelector('.notebook-hero'));
+            const characters = isHomepage ? this.splitWriting() : [];
             const timeline = gsap.timeline({ defaults: { ease: 'power2.out' } });
             if (characters.length) timeline.from(characters, {
                 opacity: 0,
                 duration: 0.07,
-                stagger: 0.95 / Math.max(1, characters.length - 1),
+                stagger: 0.45 / Math.max(1, characters.length - 1),
                 ease: 'none',
                 clearProps: 'opacity',
-            }, 0.1);
+            }, 0.05);
+            if (!isHomepage && this.writingTargets.length) timeline.from(this.writingTargets, {
+                opacity: 0, y: 6, duration: 0.3,
+                clearProps: 'opacity,transform',
+            }, 0.05);
             if (this.introTargets.length) timeline.from(this.introTargets, {
-                opacity: 0, y: 8, duration: 0.35, stagger: 0.06,
+                opacity: 0, y: 6, duration: 0.3, stagger: 0.035,
                 clearProps: 'opacity,transform',
-            }, 0.2);
+            }, 0.08);
             if (this.hasPortraitTarget) timeline.from(this.portraitTarget, {
-                opacity: 0, y: -16, rotation: 5, duration: 0.65,
+                opacity: 0, y: -8, rotation: 2, duration: 0.45,
                 clearProps: 'opacity,transform',
-            }, 0.15);
+            }, 0.1);
 
             for (const section of this.sectionTargets) {
                 const tween = gsap.from(section, {
-                    opacity: 0, y: 12, duration: 0.4, ease: 'power2.out',
+                    // Scroll motion never dims text or hides unvisited sections.
+                    y: 6, duration: 0.28, ease: 'power2.out',
                     clearProps: 'opacity,transform',
                     scrollTrigger: { trigger: section, start: 'top 90%', once: true },
                 });

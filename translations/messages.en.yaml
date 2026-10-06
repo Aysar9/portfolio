@@ -49,7 +49,7 @@ home:
     tech_label: 'Technologies I work with every day:'
     featured_label: 'Featured project'
     featured_title: 'Internal Intranet Portal'
-    featured_text: 'A central platform for a manufacturing company with more than 25 modules. I designed, built and operate it single-handedly in production. Symfony 7.4, Doctrine DBAL, LDAP integration and asynchronous processing.'
+    featured_text: 'A central platform for a manufacturing company with more than 25 modules. I designed, built and operate it single-handedly in production.'
     cta_title: 'Looking to grow your team?'
     cta_text: 'I am open to new challenges as a full-stack developer across Germany or remote.'
     cta_button: 'Let’s talk'
