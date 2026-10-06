@@ -26,13 +26,12 @@ datenschutz:
     title: 'Datenschutzerklärung'
 
 home:
+    profile_label: 'Profil von Aysar Alatrash'
+    portrait_alt: 'Porträt von Aysar Alatrash im schwarzen Hemd'
     notebook_label: 'Notizen eines Full-Stack Entwicklers'
     greeting: 'Hallo, ich bin'
     notebook_intro: 'Ich entwickle Web-Anwendungen mit PHP und Symfony — und kümmere mich auch darum, dass sie im Alltag laufen.'
     notebook_detail: 'Zum Beispiel ein Intranet für einen Fertigungsbetrieb: über 25 Module, vom Datenbank-Backend bis zum Frontend und Server-Betrieb. Eigenständig entwickelt und betreut.'
-    note_label: 'Persönliche Notiz'
-    note_title: 'Vom Backend bis zum Betrieb.'
-    note_text: 'Ich mag es, wenn alles zusammenpasst.'
     tools_heading: 'Mein Werkzeugkasten'
     tools_note: 'Vom Datenmodell bis zum Deployment — das gehört für mich zusammen.'
     work_heading: 'Ein Blick in meine Arbeit'

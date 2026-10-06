@@ -26,13 +26,12 @@ datenschutz:
     title: 'Privacy Policy'
 
 home:
+    profile_label: 'Aysar Alatrash’s profile'
+    portrait_alt: 'Portrait of Aysar Alatrash wearing a black shirt'
     notebook_label: 'Notes from a full-stack developer'
     greeting: 'Hello, I’m'
     notebook_intro: 'I build web applications with PHP and Symfony — and make sure they keep running in everyday use.'
     notebook_detail: 'For example, an intranet for a manufacturing company: over 25 modules, from the database backend to the frontend and server operations. Independently developed and maintained.'
-    note_label: 'Personal note'
-    note_title: 'From backend to operations.'
-    note_text: 'I like it when everything fits together.'
     tools_heading: 'My toolbox'
     tools_note: 'From the data model to deployment — it all belongs together.'
     work_heading: 'A look at my work'

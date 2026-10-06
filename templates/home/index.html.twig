@@ -12,13 +12,18 @@
             <a href="{{ path('app_kontakt') }}" class="notebook-link">{{ 'home.cta_contact'|trans }} <span aria-hidden="true">↗</span></a>
         </div>
     </div>
-    <aside class="notebook-margin-note" aria-label="{{ 'home.note_label'|trans }}">
-        <div class="notebook-sticky" data-notebook-motion-target="sticker">
-            <p class="notebook-sticky-title">{{ 'home.note_title'|trans }}</p>
-            <p>{{ 'home.note_text'|trans }}</p>
-            <small>{{ 'layout.location'|trans }}</small>
+    <aside class="notebook-profile" aria-label="{{ 'home.profile_label'|trans }}">
+        <figure class="notebook-portrait" data-notebook-motion-target="portrait">
+            <img src="{{ asset('images/aysar-portrait.png') }}"
+                 alt="{{ 'home.portrait_alt'|trans }}"
+                 width="1122" height="1402" decoding="async">
+            <figcaption>Aysar Alatrash</figcaption>
+        </figure>
+        <div class="notebook-profile-caption" data-notebook-motion-target="intro">
+            <p class="notebook-profile-role">{{ 'home.badge'|trans }}</p>
+            <p class="notebook-profile-stack">PHP / Symfony</p>
+            <p class="notebook-profile-location">{{ 'layout.location'|trans }}</p>
         </div>
-        <svg class="notebook-arrow" viewBox="0 0 125 51" fill="none" aria-hidden="true"><path data-notebook-motion-target="arrow" d="M118 7C110 43 50 43 8 23M8 23l16-2M8 23l11 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </aside>
 </section>
 <section class="notebook-section" data-notebook-motion-target="section" aria-labelledby="tools-heading">

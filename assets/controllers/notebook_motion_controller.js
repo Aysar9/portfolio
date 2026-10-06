@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default class extends Controller {
-    static targets = ['writing', 'intro', 'sticker', 'arrow', 'section'];
+    static targets = ['writing', 'intro', 'portrait', 'section'];
 
     connect() {
         this.originalWriting = new Map();
@@ -31,20 +31,10 @@ export default class extends Controller {
                 opacity: 0, y: 8, duration: 0.35, stagger: 0.06,
                 clearProps: 'opacity,transform',
             }, 0.2);
-            if (this.hasStickerTarget) timeline.from(this.stickerTarget, {
-                opacity: 0, y: -18, rotation: -8, duration: 0.65,
+            if (this.hasPortraitTarget) timeline.from(this.portraitTarget, {
+                opacity: 0, y: -16, rotation: 5, duration: 0.65,
                 clearProps: 'opacity,transform',
-            }, 0.25);
-            if (this.hasArrowTarget) {
-                const length = this.arrowTarget.getTotalLength() + 1;
-                timeline.fromTo(this.arrowTarget, {
-                    strokeDasharray: length,
-                    strokeDashoffset: length,
-                }, {
-                    strokeDashoffset: 0, duration: 0.5,
-                    clearProps: 'strokeDasharray,strokeDashoffset',
-                }, 0.65);
-            }
+            }, 0.15);
 
             for (const section of this.sectionTargets) {
                 const tween = gsap.from(section, {
