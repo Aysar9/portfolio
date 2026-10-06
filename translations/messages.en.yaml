@@ -66,6 +66,10 @@ about:
     learning_label: 'Currently exploring'
 
 projekte:
+    intranet_summary: 'Sole developer and maintainer · In production · Over 25 modules'
+    portfolio_summary: 'Design through server operations · DE / EN · Automated deployment'
+    jobtrack_summary: 'Personal learning project · REST API · 15 automated tests'
+    aitext_summary: 'Personal demo project · AI integration · Tutorial companion code'
     title: 'Projects – Aysar Alatrash'
     label: 'Projects'
     heading: 'Selected work'

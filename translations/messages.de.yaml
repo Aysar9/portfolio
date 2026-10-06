@@ -66,6 +66,10 @@ about:
     learning_label: 'Aktuell im Fokus'
 
 projekte:
+    intranet_summary: 'Alleiniger Entwickler und Maintainer · Produktivbetrieb · Über 25 Module'
+    portfolio_summary: 'Konzeption bis Server-Betrieb · DE / EN · Automatisches Deployment'
+    jobtrack_summary: 'Eigenes Lernprojekt · REST-API · 15 automatisierte Tests'
+    aitext_summary: 'Eigenes Demo-Projekt · KI-Integration · Begleitcode zum Tutorial'
     title: 'Projekte – Aysar Alatrash'
     label: 'Projekte'
     heading: 'Ausgewählte Arbeiten'

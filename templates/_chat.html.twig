@@ -1,5 +1,6 @@
 {# AI assistant widget — grounded in Aysar's portfolio content via Gemini #}
 <div class="notebook-chat" data-controller="chat"
+     data-action="keydown.esc@window->chat#close"
      data-chat-endpoint-value="{{ path('app_chat') }}"
      data-chat-error-value="{{ 'chat.error'|trans }}">
 
@@ -19,11 +20,12 @@
     {# Panel #}
     <section id="chat-panel"
              data-chat-target="panel"
+             aria-labelledby="chat-title"
              hidden
              class="fixed bottom-5 right-5 z-40 flex h-[32rem] max-h-[80vh] w-[calc(100vw-2.5rem)] max-w-sm flex-col overflow-hidden rounded-md border border-line bg-surface shadow-2xl">
 
         <header class="flex items-center justify-between border-b border-line bg-canvas px-4 py-3">
-            <span class="font-display text-base font-semibold tracking-tight text-ink">{{ 'chat.title'|trans }}</span>
+            <h2 id="chat-title" class="font-display text-base font-semibold tracking-tight text-ink">{{ 'chat.title'|trans }}</h2>
             <button type="button"
                     data-action="chat#toggle"
                     aria-label="{{ 'chat.close'|trans }}"

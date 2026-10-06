@@ -19,7 +19,15 @@ export default class extends Controller {
         this.launcherTarget.setAttribute('aria-expanded', String(open));
         if (open) {
             this.inputTarget.focus();
+        } else {
+            this.launcherTarget.focus();
         }
+    }
+
+    close(event) {
+        if (this.panelTarget.hasAttribute('hidden')) return;
+        event.preventDefault();
+        this.toggle();
     }
 
     async send(event) {
@@ -56,7 +64,9 @@ export default class extends Controller {
             this.appendMessage('error', this.errorValue);
         } finally {
             this.setBusy(false);
-            this.inputTarget.focus();
+            if (!this.panelTarget.hasAttribute('hidden')) {
+                this.inputTarget.focus();
+            }
         }
     }
 

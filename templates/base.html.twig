@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {# Apply saved (or system) theme before paint to avoid a flash #}
+    {# Default to light; apply an explicitly saved dark theme before paint #}
     <script>
         (function () {
             try {
                 var t = localStorage.getItem('theme');
-                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (t === 'dark') {
                     document.documentElement.classList.add('dark');
                 }
             } catch (e) {}
@@ -76,10 +76,14 @@
         {# Links — stacked on mobile, inline on desktop #}
         <div id="primary-nav" data-navbar-target="menu" class="hidden w-full md:block md:w-auto">
             <div class="notebook-nav-links flex flex-col gap-4 md:flex-row md:items-center md:gap-6 text-muted">
-                <a href="{{ path('app_home') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.start'|trans }}</a>
-                <a href="{{ path('app_about') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.about'|trans }}</a>
-                <a href="{{ path('app_projekte') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.projekte'|trans }}</a>
-                <a href="{{ path('app_kontakt') }}" data-action="navbar#close" class="hover:text-primary transition-colors">{{ 'nav.kontakt'|trans }}</a>
+                {% set current_route = app.request.attributes.get('_route')|default('') %}
+                {% for route, label in {'app_home': 'nav.start', 'app_about': 'nav.about', 'app_projekte': 'nav.projekte', 'app_kontakt': 'nav.kontakt'} %}
+                    {% set is_current = current_route == route %}
+                    {% set in_projects = route == 'app_projekte' and current_route starts with 'app_projekt_' %}
+                    <a href="{{ path(route) }}" data-action="navbar#close"
+                       class="notebook-nav-item {{ is_current or in_projects ? 'is-active' : '' }}"
+                       {% if is_current %}aria-current="page"{% elseif in_projects %}aria-current="location"{% endif %}>{{ label|trans }}</a>
+                {% endfor %}
 
                 {# Language toggle — fall back to home on routes without params (e.g. error pages) #}
                 {% set lang_route = app.request.attributes.get('_route')|default('app_home') %}

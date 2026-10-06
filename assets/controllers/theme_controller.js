@@ -24,6 +24,7 @@ export default class extends Controller {
 
     sync() {
         const isDark = document.documentElement.classList.contains('dark');
+        this.element.setAttribute('aria-pressed', String(isDark));
         if (this.hasSunTarget) {
             this.sunTarget.classList.toggle('hidden', !isDark);
         }
