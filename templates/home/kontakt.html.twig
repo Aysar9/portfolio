@@ -4,29 +4,29 @@
 
 {% block body %}
 <section class="notebook-page max-w-4xl mx-auto px-6 pt-20 pb-16">
-    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'kontakt.label'|trans }}</p>
-    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-8">
-        {{ 'kontakt.heading'|trans }}
+    <p data-notebook-motion-target="intro" class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'kontakt.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-8" aria-label="{{ 'kontakt.heading'|trans }}">
+        <span aria-hidden="true" data-notebook-motion-target="writing">{{ 'kontakt.heading'|trans }}</span>
     </h1>
-    <p class="text-lg text-ink/80 leading-relaxed max-w-2xl mb-10">
+    <p data-notebook-motion-target="intro" class="text-lg text-ink/80 leading-relaxed max-w-2xl mb-10">
         {{ 'kontakt.intro'|trans }}
     </p>
 
     <div class="space-y-4 max-w-md">
         <a href="mailto:aysar.it.it@gmail.com"
-           class="notebook-paper-card flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
+           data-notebook-motion-target="section" class="notebook-paper-card flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
             <span class="font-mono text-xs uppercase tracking-[0.15em] text-primary w-20">E-Mail</span>
             <span class="text-ink/80 group-hover:text-primary transition-colors">aysar.it.it@gmail.com</span>
         </a>
 
         <a href="https://github.com/Aysar9" target="_blank" rel="noopener"
-           class="notebook-paper-card flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
+           data-notebook-motion-target="section" class="notebook-paper-card flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
             <span class="font-mono text-xs uppercase tracking-[0.15em] text-primary w-20">GitHub</span>
             <span class="text-ink/80 group-hover:text-primary transition-colors">github.com/Aysar9</span>
         </a>
 
         {# <a href="https://www.linkedin.com/in/DEIN-PROFIL" target="_blank" rel="noopener"
-           class="notebook-paper-card flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
+           data-notebook-motion-target="section" class="notebook-paper-card flex items-center gap-4 p-4 bg-surface border border-line rounded-md hover:border-primary transition-colors group">
             <span class="font-mono text-xs uppercase tracking-[0.15em] text-primary w-20">LinkedIn</span>
             <span class="text-ink/80 group-hover:text-primary transition-colors">linkedin.com/in/DEIN-PROFIL</span>
         </a> #}

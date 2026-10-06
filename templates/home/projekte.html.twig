@@ -4,14 +4,14 @@
 
 {% block body %}
 <section class="notebook-page max-w-4xl mx-auto px-6 pt-20 pb-16">
-    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'projekte.label'|trans }}</p>
-    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-12">
-        {{ 'projekte.heading'|trans }}
+    <p data-notebook-motion-target="intro" class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'projekte.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-12" aria-label="{{ 'projekte.heading'|trans }}">
+        <span aria-hidden="true" data-notebook-motion-target="writing">{{ 'projekte.heading'|trans }}</span>
     </h1>
 
     <div class="space-y-6">
         <a href="{{ path('app_projekt_intranet') }}"
-           class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
+           data-notebook-motion-target="section" class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
             <div class="flex items-center justify-between gap-4 mb-3">
                 <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
                     {{ 'projekte.intranet_title'|trans }}
@@ -30,7 +30,7 @@
         </a>
 
         <a href="{{ path('app_projekt_portfolio') }}"
-           class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
+           data-notebook-motion-target="section" class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
             <div class="flex items-center justify-between gap-4 mb-3">
                 <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
                     {{ 'projekte.portfolio_title'|trans }}
@@ -49,7 +49,7 @@
         </a>
 
         <a href="{{ path('app_projekt_jobtrack') }}"
-           class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
+           data-notebook-motion-target="section" class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
             <div class="flex items-center justify-between gap-4 mb-3">
                 <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
                     {{ 'projekte.jobtrack_title'|trans }}
@@ -68,7 +68,7 @@
         </a>
 
         <a href="{{ path('app_projekt_aitext') }}"
-           class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
+           data-notebook-motion-target="section" class="notebook-paper-card block p-8 bg-surface border border-line rounded-md hover:border-primary hover:shadow-[0_1px_24px_-12px_rgba(17,24,39,0.25)] transition-all group">
             <div class="flex items-center justify-between gap-4 mb-3">
                 <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
                     {{ 'projekte.aitext_title'|trans }}

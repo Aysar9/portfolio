@@ -6,25 +6,25 @@
 <article class="notebook-page max-w-3xl mx-auto px-6 pt-20 pb-16">
     <a href="{{ path('app_projekte') }}" class="font-mono text-xs uppercase tracking-[0.15em] text-muted hover:text-primary transition-colors">{{ 'projekt_aitext.back'|trans }}</a>
 
-    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mt-8 mb-5">{{ 'projekt_aitext.label'|trans }}</p>
-    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6">
-        {{ 'projekt_aitext.heading'|trans }}
+    <p data-notebook-motion-target="intro" class="font-mono text-xs uppercase tracking-[0.2em] text-primary mt-8 mb-5">{{ 'projekt_aitext.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6" aria-label="{{ 'projekt_aitext.heading'|trans }}">
+        <span aria-hidden="true" data-notebook-motion-target="writing">{{ 'projekt_aitext.heading'|trans }}</span>
     </h1>
 
-    <p class="text-lg text-ink/80 leading-relaxed mb-12">
+    <p data-notebook-motion-target="intro" class="text-lg text-ink/80 leading-relaxed mb-12">
         {{ 'projekt_aitext.intro'|trans }}
     </p>
 
-    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_aitext.techstack_heading'|trans }}</h2>
-    <ul class="space-y-2 text-ink/80 leading-relaxed mb-8">
+    <h2 data-notebook-motion-target="section" class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_aitext.techstack_heading'|trans }}</h2>
+    <ul data-notebook-motion-target="section" class="space-y-2 text-ink/80 leading-relaxed mb-8">
         <li>{{ 'projekt_aitext.tech_backend'|trans|raw }}</li>
         <li>{{ 'projekt_aitext.tech_ai'|trans|raw }}</li>
         <li>{{ 'projekt_aitext.tech_frontend'|trans|raw }}</li>
     </ul>
 
-    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-6">{{ 'projekt_aitext.challenges_heading'|trans }}</h2>
+    <h2 data-notebook-motion-target="section" class="font-display text-2xl font-semibold tracking-tight mt-12 mb-6">{{ 'projekt_aitext.challenges_heading'|trans }}</h2>
 
-    <div class="space-y-8">
+    <div data-notebook-motion-target="section" class="space-y-8">
         <div>
             <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_aitext.challenge1_title'|trans }}</h3>
             <p class="text-ink/80 leading-relaxed">
@@ -39,17 +39,17 @@
         </div>
     </div>
 
-    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_aitext.role_heading'|trans }}</h2>
-    <p class="text-ink/80 leading-relaxed mb-8">
+    <h2 data-notebook-motion-target="section" class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_aitext.role_heading'|trans }}</h2>
+    <p data-notebook-motion-target="section" class="text-ink/80 leading-relaxed mb-8">
         {{ 'projekt_aitext.role_text'|trans }}
     </p>
 
-    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_aitext.result_heading'|trans }}</h2>
-    <p class="text-ink/80 leading-relaxed">
+    <h2 data-notebook-motion-target="section" class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_aitext.result_heading'|trans }}</h2>
+    <p data-notebook-motion-target="section" class="text-ink/80 leading-relaxed">
         {{ 'projekt_aitext.result_text'|trans }}
     </p>
 
-    <div class="mt-10">
+    <div data-notebook-motion-target="section" class="mt-10">
         <a href="https://github.com/Aysar9/AI-Text-zusammenfassen" target="_blank" rel="noopener"
            class="inline-flex items-center gap-2 px-6 py-3 border border-line rounded-md font-medium text-ink hover:border-primary hover:text-primary transition-colors">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

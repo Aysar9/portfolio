@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ 'home.title'|trans }}{% endblock %}
-{% block main_attributes %}data-controller="notebook-motion" data-action="focusin->notebook-motion#revealFocusedSection turbo:before-cache@document->notebook-motion#finish"{% endblock %}
 {% block body %}
 <section class="notebook-hero" aria-labelledby="home-heading">
     <div>

@@ -4,19 +4,19 @@
 
 {% block body %}
 <section class="notebook-page max-w-4xl mx-auto px-6 pt-20 pb-16">
-    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'about.label'|trans }}</p>
-    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-8">
-        {{ 'about.heading'|trans }}
+    <p data-notebook-motion-target="intro" class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'about.label'|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-8" aria-label="{{ 'about.heading'|trans }}">
+        <span aria-hidden="true" data-notebook-motion-target="writing">{{ 'about.heading'|trans }}</span>
     </h1>
 
-    <div class="space-y-6 text-lg text-ink/80 leading-relaxed max-w-2xl">
+    <div data-notebook-motion-target="section" class="space-y-6 text-lg text-ink/80 leading-relaxed max-w-2xl">
         <p>{{ 'about.p1'|trans }}</p>
         <p>{{ 'about.p2'|trans }}</p>
         <p>{{ 'about.p3'|trans }}</p>
     </div>
 
     {# Currently learning #}
-    <div class="mt-10">
+    <div data-notebook-motion-target="section" class="mt-10">
         <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-4">{{ 'about.learning_label'|trans }}</p>
         <div class="flex flex-wrap gap-2 font-mono text-xs">
             {% for tech in ['Docker', 'CI/CD', 'KI / AI'] %}
@@ -24,7 +24,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="mt-10">
+    <div data-notebook-motion-target="section" class="mt-10">
         <a href="{{ asset('files/Lebenslauf_Aysar_Alatrash.pdf') }}" target="_blank" rel="noopener"
            class="notebook-button inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-md font-medium hover:bg-primary-700 transition-colors">
             {{ 'about.cv_download'|trans }}

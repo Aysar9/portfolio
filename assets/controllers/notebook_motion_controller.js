@@ -20,29 +20,31 @@ export default class extends Controller {
 
             const characters = this.splitWriting();
             const timeline = gsap.timeline({ defaults: { ease: 'power2.out' } });
-            timeline.from(characters, {
+            if (characters.length) timeline.from(characters, {
                 opacity: 0,
                 duration: 0.07,
                 stagger: 0.95 / Math.max(1, characters.length - 1),
                 ease: 'none',
                 clearProps: 'opacity',
             }, 0.1);
-            timeline.from(this.introTargets, {
+            if (this.introTargets.length) timeline.from(this.introTargets, {
                 opacity: 0, y: 8, duration: 0.35, stagger: 0.06,
                 clearProps: 'opacity,transform',
             }, 0.2);
-            timeline.from(this.stickerTarget, {
+            if (this.hasStickerTarget) timeline.from(this.stickerTarget, {
                 opacity: 0, y: -18, rotation: -8, duration: 0.65,
                 clearProps: 'opacity,transform',
             }, 0.25);
-            const length = this.arrowTarget.getTotalLength() + 1;
-            timeline.fromTo(this.arrowTarget, {
-                strokeDasharray: length,
-                strokeDashoffset: length,
-            }, {
-                strokeDashoffset: 0, duration: 0.5,
-                clearProps: 'strokeDasharray,strokeDashoffset',
-            }, 0.65);
+            if (this.hasArrowTarget) {
+                const length = this.arrowTarget.getTotalLength() + 1;
+                timeline.fromTo(this.arrowTarget, {
+                    strokeDasharray: length,
+                    strokeDashoffset: length,
+                }, {
+                    strokeDashoffset: 0, duration: 0.5,
+                    clearProps: 'strokeDasharray,strokeDashoffset',
+                }, 0.65);
+            }
 
             for (const section of this.sectionTargets) {
                 const tween = gsap.from(section, {

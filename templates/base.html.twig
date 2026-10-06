@@ -115,7 +115,7 @@
     </nav>
     </header>
 
-    <main id="main-content" class="notebook-main" tabindex="-1" {% block main_attributes %}{% endblock %}>
+    <main id="main-content" class="notebook-main" tabindex="-1" {% block main_attributes %}data-controller="notebook-motion" data-action="focusin->notebook-motion#revealFocusedSection turbo:before-cache@document->notebook-motion#finish"{% endblock %}>
         {% block body %}{% endblock %}
     </main>
 
