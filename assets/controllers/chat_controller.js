@@ -5,29 +5,42 @@ import { Controller } from '@hotwired/stimulus';
  * keeps a short in-memory history, and renders the conversation.
  */
 export default class extends Controller {
-    static targets = ['launcher', 'panel', 'messages', 'input', 'submit'];
+    static targets = ['launcher', 'fallback', 'panel', 'messages', 'input', 'submit'];
     static values = { endpoint: String, error: String, rateLimited: String };
 
     connect() {
         this.history = [];
+        this.beforeCache();
     }
 
     toggle() {
         const open = this.panelTarget.hasAttribute('hidden');
         this.panelTarget.toggleAttribute('hidden', !open);
-        this.launcherTarget.toggleAttribute('hidden', open);
         this.launcherTarget.setAttribute('aria-expanded', String(open));
         if (open) {
             this.inputTarget.focus();
         } else {
-            this.launcherTarget.focus();
+            this.restoreFocus();
         }
     }
 
     close(event) {
         if (this.panelTarget.hasAttribute('hidden')) return;
-        event.preventDefault();
+        event?.preventDefault();
         this.toggle();
+    }
+
+    beforeCache() {
+        this.panelTarget.setAttribute('hidden', '');
+        this.launcherTarget.setAttribute('aria-expanded', 'false');
+    }
+
+    restoreFocus() {
+        if (this.launcherTarget.getClientRects().length) {
+            this.launcherTarget.focus();
+        } else if (this.hasFallbackTarget) {
+            this.fallbackTarget.focus();
+        }
     }
 
     async send(event) {

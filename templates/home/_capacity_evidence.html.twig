@@ -1,0 +1,34 @@
+{# Fictional independent weeks. Ratios do not imply live warning thresholds. #}
+<figure class="workflow-figure capacity-preview {{ compact|default(false) ? 'preview-compact' : '' }}">
+    <div class="workflow-window">
+        <div class="workflow-window-bar"><span>{{ 'intranet_capacity.label'|trans }}</span><strong>{{ 'workflow.sample_label'|trans }}</strong></div>
+        <div class="preview-body">
+            <div class="capacity-legend"><span><i class="legend-plan" aria-hidden="true"></i>{{ 'intranet_capacity.planned'|trans }}</span><span><i class="legend-capacity" aria-hidden="true"></i>{{ 'intranet_capacity.available'|trans }}</span></div>
+            <div class="capacity-scale" aria-hidden="true"><span>0</span><span>250</span><span>500 h</span></div>
+            <ol class="capacity-weeks" aria-label="{{ 'intranet_capacity.example_title'|trans }}">
+                {% for week in [
+                    {number: '18', hours: 320, width: 64, ratio: '80 %'},
+                    {number: '19', hours: 440, width: 88, ratio: '110 %'},
+                    {number: '20', hours: 180, width: 36, ratio: null}
+                ] %}
+                    <li class="capacity-week">
+                        <div class="capacity-week-heading"><strong>{{ 'preview.capacity.week'|trans }} {{ week.number }}</strong><span>{{ week.ratio ?? ('intranet_capacity.unknown'|trans) }}</span></div>
+                        <div class="capacity-track" aria-hidden="true">
+                            {% if week.ratio %}<span class="capacity-baseline"></span>{% endif %}
+                            <span class="capacity-bar" style="width: {{ week.width }}%"></span>
+                        </div>
+                        <p class="capacity-values">{{ week.hours }} h {{ 'preview.capacity.planned'|trans }} <span aria-hidden="true">/</span> {% if week.ratio %}400 h {{ 'preview.capacity.available'|trans }}{% else %}{{ 'preview.capacity.missing'|trans }}{% endif %}</p>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    {% if not compact|default(false) %}
+    <ol class="workflow-flow" aria-label="{{ 'intranet_capacity.flow'|trans }}">
+        {% for step in ['plan', 'calculate', 'compare'] %}
+            <li><span aria-hidden="true">0{{ loop.index }}</span><strong>{{ ('intranet_capacity.' ~ step)|trans }}</strong><small>{{ ('intranet_capacity.' ~ step ~ '_note')|trans }}</small></li>
+        {% endfor %}
+    </ol>
+    <figcaption class="workflow-caption">{{ 'intranet_capacity.caption'|trans }}</figcaption>
+    {% endif %}
+</figure>

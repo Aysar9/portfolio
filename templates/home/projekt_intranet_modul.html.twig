@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% set copy = 'intranet_' ~ module %}
+
+{% block title %}{{ (copy ~ '.title')|trans }}{% endblock %}
+
+{% block body %}
+<article class="notebook-page notebook-case-study max-w-3xl mx-auto px-6 pt-20 pb-16">
+    <a href="{{ path('app_projekte') }}" class="font-mono text-xs uppercase tracking-[0.15em] text-muted hover:text-primary transition-colors">{{ 'projekt_intranet.back'|trans }}</a>
+    <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary mt-8 mb-5">{{ (copy ~ '.label')|trans }}</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6">{{ (copy ~ '.heading')|trans }}</h1>
+    <p class="text-lg text-ink/80 leading-relaxed mb-12">{{ (copy ~ '.intro')|trans }}</p>
+
+    {% include 'home/_' ~ module ~ '_evidence.html.twig' %}
+
+    <section class="notebook-decision-grid" aria-label="{{ 'workflow.decisions_label'|trans }}">
+        {% for decision in ['problem', 'decision', 'result'] %}
+            <article>
+                <p class="notebook-project-kicker">{{ ('workflow.' ~ decision ~ '_label')|trans }}</p>
+                <h2>{{ (copy ~ '.' ~ decision ~ '_title')|trans }}</h2>
+                <p>{{ (copy ~ '.' ~ decision ~ '_text')|trans }}</p>
+            </article>
+        {% endfor %}
+    </section>
+
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-6">{{ 'intranet_modules.details'|trans }}</h2>
+    <div class="space-y-8">
+        {% for detail in [1, 2, 3] %}
+            <section>
+                <h3 class="text-lg font-semibold text-ink mb-2">{{ (copy ~ '.detail' ~ detail ~ '_title')|trans }}</h3>
+                <p class="text-ink/80 leading-relaxed">{{ (copy ~ '.detail' ~ detail ~ '_text')|trans }}</p>
+            </section>
+        {% endfor %}
+    </div>
+    <h2 class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_intranet.techstack_heading'|trans }}</h2>
+    <p class="text-ink/80 leading-relaxed">{{ (copy ~ '.tech')|trans }}</p>
+    <p class="workflow-caption">{{ 'intranet_modules.context'|trans }}</p>
+
+    {% include 'home/_intranet_modules.html.twig' with {excluded: [module]} only %}
+</article>
+{% endblock %}

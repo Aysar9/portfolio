@@ -36,6 +36,54 @@ final class HomeController extends AbstractController
         return $this->render('home/projekt_intranet.html.twig');
     }
 
+    #[Route('/projekte/intranet-telefonie', name: 'app_projekt_telefonie')]
+    public function projektTelefonie(): Response
+    {
+        return $this->render('home/projekt_intranet_modul.html.twig', [
+            'module' => 'telephone',
+        ]);
+    }
+
+    #[Route('/projekte/intranet-kapazitaetsplanung', name: 'app_projekt_kapazitaet')]
+    public function projektKapazitaet(): Response
+    {
+        return $this->render('home/projekt_intranet_modul.html.twig', [
+            'module' => 'capacity',
+        ]);
+    }
+
+    #[Route('/projekte/intranet-azubi-fehlzeiten', name: 'app_projekt_azubi')]
+    public function projektAzubi(): Response
+    {
+        return $this->render('home/projekt_intranet_modul.html.twig', [
+            'module' => 'absence',
+        ]);
+    }
+
+    #[Route('/projekte/intranet-etiketten', name: 'app_projekt_etiketten')]
+    public function projektEtiketten(): Response
+    {
+        return $this->render('home/projekt_intranet_modul.html.twig', [
+            'module' => 'labels',
+        ]);
+    }
+
+    #[Route('/projekte/intranet-drucker', name: 'app_projekt_drucker')]
+    public function projektDrucker(): Response
+    {
+        return $this->render('home/projekt_intranet_modul.html.twig', [
+            'module' => 'printers',
+        ]);
+    }
+
+    #[Route('/projekte/intranet-fahrzeugverwaltung', name: 'app_projekt_fahrzeuge')]
+    public function projektFahrzeuge(): Response
+    {
+        return $this->render('home/projekt_intranet_modul.html.twig', [
+            'module' => 'vehicles',
+        ]);
+    }
+
     #[Route('/projekte/portfolio', name: 'app_projekt_portfolio')]
     public function projektPortfolio(): Response
     {

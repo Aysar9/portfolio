@@ -5,16 +5,18 @@
 {% block body %}
 <section class="notebook-page max-w-4xl mx-auto px-6 pt-20 pb-16">
     <p data-notebook-motion-target="intro" class="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-5">{{ 'projekte.label'|trans }}</p>
-    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-12" aria-label="{{ 'projekte.heading'|trans }}">
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight mb-6" aria-label="{{ 'projekte.heading'|trans }}">
         <span aria-hidden="true" data-notebook-motion-target="writing">{{ 'projekte.heading'|trans }}</span>
     </h1>
 
+    <p class="text-muted leading-relaxed mb-8">{{ 'intranet_modules.group_intro'|trans }}</p>
     <div class="notebook-project-list">
         <a href="{{ path('app_projekt_intranet') }}"
-           data-notebook-motion-target="section" class="notebook-project-entry notebook-project-lead group">
+           data-notebook-motion-target="section" class="notebook-project-entry notebook-project-lead project-lead-preview group">
+            <div class="project-lead-copy">
             <div class="flex items-center justify-between gap-4 mb-3">
                 <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
-                    {{ 'projekte.intranet_title'|trans }}
+                    {{ 'intranet_modules.manufacturing_title'|trans }}
                 </h2>
                 <span aria-hidden="true" class="text-primary translate-x-0 group-hover:translate-x-1 transition-transform">&rarr;</span>
             </div>
@@ -23,7 +25,30 @@
             </p>
             <p class="notebook-project-meta">{{ 'projekte.intranet_summary'|trans }}</p>
             <div class="flex flex-wrap gap-2 font-mono text-xs">
-                {% for tech in ['Symfony 7.4', 'PHP 8.2+', 'Doctrine DBAL', 'LDAP / AD', 'Messenger + Redis'] %}
+                {% for tech in ['Symfony 7.4', 'PHP 8.2+', 'Doctrine DBAL', 'SQL Server', 'Stimulus'] %}
+                    <span class="notebook-tag px-3 py-1 bg-canvas border border-line rounded-full text-ink/80">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            </div>
+            {% include 'home/_intranet_evidence.html.twig' with {compact: true} only %}
+        </a>
+
+        {% include 'home/_intranet_modules.html.twig' with {excluded: ['manufacturing'], previews: true} only %}
+
+        <a href="{{ path('app_projekt_jobtrack') }}"
+           data-notebook-motion-target="section" class="notebook-project-entry group">
+            <div class="flex items-center justify-between gap-4 mb-3">
+                <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+                    {{ 'projekte.jobtrack_title'|trans }}
+                </h2>
+                <span aria-hidden="true" class="text-primary translate-x-0 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+            <p class="text-muted mb-5 leading-relaxed">
+                {{ 'projekte.jobtrack_text'|trans }}
+            </p>
+            <p class="notebook-project-meta">{{ 'projekte.jobtrack_summary'|trans }}</p>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                {% for tech in ['Symfony 7', 'PHP 8.3', 'Doctrine ORM', 'MySQL 8', 'Docker'] %}
                     <span class="notebook-tag px-3 py-1 bg-canvas border border-line rounded-full text-ink/80">{{ tech }}</span>
                 {% endfor %}
             </div>
@@ -43,25 +68,6 @@
             <p class="notebook-project-meta">{{ 'projekte.portfolio_summary'|trans }}</p>
             <div class="flex flex-wrap gap-2 font-mono text-xs">
                 {% for tech in ['Symfony 7.4', 'Tailwind CSS', 'GitHub Actions', 'Nginx / Hetzner', 'Gemini'] %}
-                    <span class="notebook-tag px-3 py-1 bg-canvas border border-line rounded-full text-ink/80">{{ tech }}</span>
-                {% endfor %}
-            </div>
-        </a>
-
-        <a href="{{ path('app_projekt_jobtrack') }}"
-           data-notebook-motion-target="section" class="notebook-project-entry group">
-            <div class="flex items-center justify-between gap-4 mb-3">
-                <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
-                    {{ 'projekte.jobtrack_title'|trans }}
-                </h2>
-                <span aria-hidden="true" class="text-primary translate-x-0 group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </div>
-            <p class="text-muted mb-5 leading-relaxed">
-                {{ 'projekte.jobtrack_text'|trans }}
-            </p>
-            <p class="notebook-project-meta">{{ 'projekte.jobtrack_summary'|trans }}</p>
-            <div class="flex flex-wrap gap-2 font-mono text-xs">
-                {% for tech in ['Symfony 7', 'PHP 8.3', 'Doctrine ORM', 'MySQL 8', 'Docker'] %}
                     <span class="notebook-tag px-3 py-1 bg-canvas border border-line rounded-full text-ink/80">{{ tech }}</span>
                 {% endfor %}
             </div>

@@ -46,7 +46,12 @@
         {{ importmap() }}
     {% endblock %}
 </head>
-<body class="text-ink antialiased font-sans">
+<body class="text-ink antialiased font-sans"
+      data-controller="chat"
+      data-action="keydown.esc@window->chat#close turbo:before-cache@document->chat#beforeCache"
+      data-chat-endpoint-value="{{ path('app_chat') }}"
+      data-chat-rate-limited-value="{{ 'chat.rate_limited'|trans }}"
+      data-chat-error-value="{{ 'chat.error'|trans }}">
     <a href="#main-content" class="skip-link">{{ 'layout.skip_content'|trans }}</a>
     <div class="notebook-shell">
     <div class="notebook-holes" aria-hidden="true"></div>
@@ -59,8 +64,9 @@
 
         {# Hamburger — mobile only #}
         <button type="button"
-                class="md:hidden -mr-2 p-2 text-ink rounded-md hover:text-primary transition-colors"
+                class="lg:hidden -mr-2 p-2 text-ink rounded-md hover:text-primary transition-colors"
                 data-navbar-target="button"
+                data-chat-target="fallback"
                 data-action="navbar#toggle"
                 aria-expanded="false"
                 aria-controls="primary-nav"
@@ -74,8 +80,8 @@
         </button>
 
         {# Links — stacked on mobile, inline on desktop #}
-        <div id="primary-nav" data-navbar-target="menu" class="hidden w-full md:block md:w-auto">
-            <div class="notebook-nav-links flex flex-col gap-4 md:flex-row md:items-center md:gap-6 text-muted">
+        <div id="primary-nav" data-navbar-target="menu" class="hidden w-full lg:block lg:w-auto">
+            <div class="notebook-nav-links flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6 text-muted">
                 {% set current_route = app.request.attributes.get('_route')|default('') %}
                 {% for route, label in {'app_home': 'nav.start', 'app_about': 'nav.about', 'app_projekte': 'nav.projekte', 'app_kontakt': 'nav.kontakt'} %}
                     {% set is_current = current_route == route %}
@@ -85,10 +91,23 @@
                        {% if is_current %}aria-current="page"{% elseif in_projects %}aria-current="location"{% endif %}>{{ label|trans }}</a>
                 {% endfor %}
 
+                <button type="button"
+                        data-chat-target="launcher"
+                        data-action="chat#toggle navbar#close"
+                        aria-expanded="false"
+                        aria-controls="chat-panel"
+                        aria-haspopup="dialog"
+                        class="notebook-nav-item notebook-chat-entry">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h8M8 14h5M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12Z"/>
+                    </svg>
+                    <span>{{ 'chat.button'|trans }}</span>
+                </button>
+
                 {# Language toggle — fall back to home on routes without params (e.g. error pages) #}
                 {% set lang_route = app.request.attributes.get('_route')|default('app_home') %}
                 {% set lang_params = app.request.attributes.get('_route_params')|default({}) %}
-                <span class="flex gap-1 pt-4 border-t border-line md:pt-0 md:border-t-0 md:border-l md:pl-4">
+                <span class="flex gap-1 pt-4 border-t border-line lg:pt-0 lg:border-t-0 lg:border-l lg:pl-4">
                     <a href="{{ path(lang_route, lang_params|merge({'_locale': 'de'})) }}"
                     class="{{ app.request.locale == 'de' ? 'text-primary font-semibold' : 'hover:text-primary' }} transition-colors">DE</a>
                     <span>/</span>

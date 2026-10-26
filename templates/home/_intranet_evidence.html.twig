@@ -1,0 +1,37 @@
+{# Source-backed mobile booking behavior, illustrated with fictional booking labels. #}
+<figure class="workflow-figure manufacturing-preview {{ compact|default(false) ? 'preview-compact' : '' }}">
+    <div class="workflow-window">
+        <div class="workflow-window-bar">
+            <span>{{ 'workflow.report_label'|trans }}</span>
+            <span class="workflow-status">{{ 'workflow.sample_label'|trans }}</span>
+        </div>
+        <div class="preview-body">
+            <div class="preview-heading">
+                <div><p class="preview-eyebrow">{{ 'preview.manufacturing.subject'|trans }}</p><p class="preview-title">{{ 'preview.manufacturing.title'|trans }}</p></div>
+                <span class="preview-pill">{{ 'preview.manufacturing.channel'|trans }}</span>
+            </div>
+            <ol class="booking-timeline" aria-label="{{ 'preview.manufacturing.timeline'|trans }}">
+                {% for event in [
+                    {time: '09:41', kind: 'saved', title: 'first_attempt', booking: 'example_a', result: 'recorded'},
+                    {time: '09:42', kind: 'retry', title: 'retry', booking: 'example_a', result: 'duplicate'},
+                    {time: '09:44', kind: 'rejected', title: 'old_revision', booking: 'example_b', result: 'rejected'}
+                ] %}
+                    <li class="booking-event booking-event-{{ event.kind }}">
+                        <span class="booking-node" aria-hidden="true"></span>
+                        <div class="booking-event-copy"><time>{{ event.time }}</time><strong>{{ ('workflow.' ~ event.title)|trans }}</strong><small>{{ ('workflow.' ~ event.booking)|trans }}</small></div>
+                        <span class="booking-result">{{ ('workflow.' ~ event.result)|trans }}</span>
+                    </li>
+                {% endfor %}
+            </ol>
+            <div class="history-summary"><span class="history-count">1</span><div><strong>{{ 'preview.manufacturing.saved_entry'|trans }}</strong><p>{{ 'preview.manufacturing.saved_note'|trans }}</p></div></div>
+        </div>
+    </div>
+    {% if not compact|default(false) %}
+    <ol class="workflow-flow" aria-label="{{ 'workflow.flow_label'|trans }}">
+        <li><span aria-hidden="true">01</span><strong>{{ 'workflow.source'|trans }}</strong><small>{{ 'workflow.source_note'|trans }}</small></li>
+        <li><span aria-hidden="true">02</span><strong>{{ 'workflow.validation'|trans }}</strong><small>{{ 'workflow.validation_note'|trans }}</small></li>
+        <li><span aria-hidden="true">03</span><strong>{{ 'workflow.output'|trans }}</strong><small>{{ 'workflow.output_note'|trans }}</small></li>
+    </ol>
+    <figcaption class="workflow-caption">{{ 'preview.manufacturing.caption'|trans }}</figcaption>
+    {% endif %}
+</figure>

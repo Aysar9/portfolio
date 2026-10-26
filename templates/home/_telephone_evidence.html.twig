@@ -1,0 +1,33 @@
+{# Masked explanatory values; no contacts, PBX requests or dialable links. #}
+<figure class="workflow-figure telephone-preview {{ compact|default(false) ? 'preview-compact' : '' }}">
+    <div class="workflow-window">
+        <div class="workflow-window-bar"><span>{{ 'intranet_telephone.label'|trans }}</span><strong>{{ 'workflow.sample_label'|trans }}</strong></div>
+        <div class="telephone-layout">
+            <div class="call-history">
+                <p class="preview-eyebrow">{{ 'preview.telephone.history'|trans }}</p>
+                <ul class="call-list">
+                    <li class="call-selected"><span class="call-direction" aria-hidden="true">↙</span><div><strong>{{ 'preview.telephone.contact_a'|trans }}</strong><span>{{ 'preview.telephone.incoming'|trans }} · 0+49 …</span></div><time>09:41</time></li>
+                    <li><span class="call-direction" aria-hidden="true">↗</span><div><strong>{{ 'preview.telephone.contact_b'|trans }}</strong><span>{{ 'preview.telephone.outgoing'|trans }} · +49 …</span></div><time>09:12</time></li>
+                    <li><span class="call-direction call-missed" aria-hidden="true">↙</span><div><strong>{{ 'preview.telephone.unassigned'|trans }}</strong><span>{{ 'preview.telephone.missed'|trans }} · +49 …</span></div><time>08:52</time></li>
+                </ul>
+            </div>
+            <div class="phone-contact">
+                <div class="phone-contact-heading"><span class="contact-avatar" aria-hidden="true">A</span><div><strong>{{ 'preview.telephone.contact_a'|trans }}</strong><span>{{ 'preview.telephone.matched'|trans }}</span></div></div>
+                <dl class="phone-values">
+                    <div><dt>{{ 'intranet_telephone.original'|trans }}</dt><dd>0+49 …</dd></div>
+                    <div><dt>{{ 'intranet_telephone.phonebook'|trans }}</dt><dd>+49 …</dd></div>
+                    <div><dt>{{ 'intranet_telephone.callback'|trans }}</dt><dd>{{ 'intranet_telephone.pbx_format'|trans }}</dd></div>
+                </dl>
+                <p class="phone-contact-note">{{ 'preview.telephone.note'|trans }}</p>
+            </div>
+        </div>
+    </div>
+    {% if not compact|default(false) %}
+    <ol class="workflow-flow" aria-label="{{ 'intranet_telephone.matching'|trans }}">
+        {% for step in ['exact', 'canonical', 'legacy'] %}
+            <li><span aria-hidden="true">0{{ loop.index }}</span><strong>{{ ('intranet_telephone.' ~ step)|trans }}</strong><small>{{ ('intranet_telephone.' ~ step ~ '_note')|trans }}</small></li>
+        {% endfor %}
+    </ol>
+    <figcaption class="workflow-caption">{{ 'intranet_telephone.caption'|trans }}</figcaption>
+    {% endif %}
+</figure>

@@ -1,0 +1,30 @@
+{# Static illustration: fictional spreadsheet fields and a label-format PDF page. #}
+<figure class="workflow-figure labels-preview {{ compact|default(false) ? 'preview-compact' : '' }}">
+    <div class="workflow-window">
+        <div class="workflow-window-bar"><span>{{ 'intranet_labels.label'|trans }}</span><strong>{{ 'workflow.sample_label'|trans }}</strong></div>
+        <div class="label-workflow">
+            <div class="label-mapping">
+                <p class="preview-eyebrow">{{ 'intranet_labels.mapping_heading'|trans }}</p>
+                <dl class="label-fields">
+                    <div><dt><span>A</span> {{ 'intranet_labels.project'|trans }}</dt><dd>P-014</dd></div>
+                    <div><dt><span>B</span> {{ 'intranet_labels.position'|trans }}</dt><dd>S-021</dd></div>
+                    <div><dt><span>C</span> {{ 'intranet_labels.description'|trans }}</dt><dd>{{ 'intranet_labels.part'|trans }}</dd></div>
+                </dl>
+                <p class="label-mapping-note">{{ 'intranet_labels.mapping_note'|trans }}</p>
+            </div>
+            <div class="label-output">
+                <p class="preview-eyebrow">{{ 'intranet_labels.pdf_format'|trans }}</p>
+                <div class="label-paper-stack">
+                    <div class="label-paper">
+                        <span class="label-paper-caption">{{ 'intranet_labels.project'|trans }}</span>
+                        <strong class="label-project">P-014</strong>
+                        <div class="label-position"><span>{{ 'intranet_labels.position'|trans }}</span><strong>S-021</strong></div>
+                        <p>{{ 'intranet_labels.part'|trans }}</p>
+                    </div>
+                </div>
+                <p class="label-output-note">{{ 'intranet_labels.page_note'|trans }}</p>
+            </div>
+        </div>
+    </div>
+    {% if not compact|default(false) %}<figcaption class="workflow-caption">{{ 'intranet_labels.caption'|trans }}</figcaption>{% endif %}
+</figure>

@@ -1,0 +1,21 @@
+{# Fictional vehicle and recorded events. These are not compliance assessments. #}
+<figure class="workflow-figure vehicles-preview {{ compact|default(false) ? 'preview-compact' : '' }}">
+    <div class="workflow-window">
+        <div class="workflow-window-bar"><span>{{ 'intranet_vehicles.label'|trans }}</span><strong>{{ 'workflow.sample_label'|trans }}</strong></div>
+        <div class="preview-body">
+            <div class="vehicle-heading"><div><p class="preview-eyebrow">{{ 'intranet_vehicles.example_vehicle'|trans }}</p><p class="preview-title">V-014</p></div><span class="vehicle-record-label">{{ 'intranet_vehicles.record'|trans }}</span></div>
+            <ol class="vehicle-timeline" aria-label="{{ 'intranet_vehicles.history'|trans }}">
+                {% for event in [{key: 'service', date: 'service_date'}, {key: 'wolke', date: 'wolke_date'}, {key: 'uvv', date: 'uvv_date'}] %}
+                    <li><span class="vehicle-event-node" aria-hidden="true"></span><div><strong>{{ ('intranet_vehicles.' ~ event.key)|trans }}</strong><span>{{ ('intranet_vehicles.' ~ event.date)|trans }}</span></div><small>{{ 'intranet_vehicles.recorded'|trans }}</small></li>
+                {% endfor %}
+            </ol>
+            {% if not compact|default(false) %}
+                <div class="vehicle-source-grid">
+                    <div><span>{{ 'intranet_vehicles.database'|trans }}</span><strong>{{ 'intranet_vehicles.history'|trans }}</strong></div>
+                    <div><span>{{ 'intranet_vehicles.excel'|trans }}</span><strong>{{ 'intranet_vehicles.hu'|trans }} · {{ 'intranet_vehicles.hu_date'|trans }}</strong></div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if not compact|default(false) %}<figcaption class="workflow-caption">{{ 'intranet_vehicles.caption'|trans }}</figcaption>{% endif %}
+</figure>

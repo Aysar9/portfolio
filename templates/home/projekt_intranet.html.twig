@@ -15,6 +15,18 @@
         {{ 'projekt_intranet.intro'|trans }}
     </p>
 
+    {% include 'home/_intranet_evidence.html.twig' %}
+
+    <section class="notebook-decision-grid" aria-label="{{ 'workflow.decisions_label'|trans }}">
+        {% for decision in ['problem', 'decision', 'result'] %}
+            <article>
+                <p class="notebook-project-kicker">{{ ('workflow.' ~ decision ~ '_label')|trans }}</p>
+                <h2>{{ ('workflow.' ~ decision ~ '_title')|trans }}</h2>
+                <p>{{ ('workflow.' ~ decision ~ '_text')|trans }}</p>
+            </article>
+        {% endfor %}
+    </section>
+
     <div class="notebook-case-summary">
         <h2 data-notebook-motion-target="section" class="font-display text-2xl font-semibold tracking-tight mt-12 mb-4">{{ 'projekt_intranet.role_heading'|trans }}</h2>
         <p data-notebook-motion-target="section" class="text-ink/80 leading-relaxed mb-8">
@@ -33,7 +45,6 @@
         <li>{{ 'projekt_intranet.tech_frontend'|trans|raw }}</li>
         <li>{{ 'projekt_intranet.tech_data'|trans|raw }}</li>
         <li>{{ 'projekt_intranet.tech_auth'|trans|raw }}</li>
-        <li>{{ 'projekt_intranet.tech_async'|trans|raw }}</li>
         <li>{{ 'projekt_intranet.tech_docs'|trans|raw }}</li>
     </ul>
 
@@ -53,19 +64,16 @@
             </p>
         </div>
         <div>
-            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.challenge3_title'|trans }}</h3>
-            <p class="text-ink/80 leading-relaxed">
-                {{ 'projekt_intranet.challenge3_text'|trans }}
-            </p>
-        </div>
-        <div>
             <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.challenge4_title'|trans }}</h3>
             <p class="text-ink/80 leading-relaxed">
                 {{ 'projekt_intranet.challenge4_text'|trans }}
             </p>
         </div>
+        <div>
+            <h3 class="text-lg font-semibold text-ink mb-2">{{ 'projekt_intranet.revision_title'|trans }}</h3>
+            <p class="text-ink/80 leading-relaxed">{{ 'projekt_intranet.revision_text'|trans }}</p>
+        </div>
     </div>
-
-
+    {% include 'home/_intranet_modules.html.twig' with {excluded: ['manufacturing']} only %}
 </article>
 {% endblock %}

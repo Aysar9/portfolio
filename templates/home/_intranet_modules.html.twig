@@ -1,0 +1,29 @@
+{% set excluded = excluded|default([]) %}
+{% set preview_modules = preview_modules|default(['telephone', 'capacity', 'absence', 'labels', 'printers', 'vehicles']) %}
+{% set modules = [
+    {key: 'manufacturing', route: 'app_projekt_intranet', number: '01'},
+    {key: 'telephone', route: 'app_projekt_telefonie', number: '02'},
+    {key: 'capacity', route: 'app_projekt_kapazitaet', number: '03'},
+    {key: 'absence', route: 'app_projekt_azubi', number: '04'},
+    {key: 'labels', route: 'app_projekt_etiketten', number: '05'},
+    {key: 'printers', route: 'app_projekt_drucker', number: '06'},
+    {key: 'vehicles', route: 'app_projekt_fahrzeuge', number: '07'}
+] %}
+<nav class="intranet-modules" aria-label="{{ 'intranet_modules.more'|trans }}">
+    <p class="notebook-project-kicker">{{ 'intranet_modules.more'|trans }}</p>
+    <div class="intranet-module-grid">
+        {% for item in modules %}
+            {% if item.key not in excluded %}
+                <a class="intranet-module-link" href="{{ path(item.route) }}">
+                    <span class="intranet-module-number">{{ item.number }} / {{ 'intranet_modules.module'|trans }} <span aria-hidden="true">↗</span></span>
+                    {% if previews|default(false) and item.key in preview_modules %}
+                        {% include 'home/_' ~ item.key ~ '_evidence.html.twig' with {compact: true} only %}
+                    {% endif %}
+                    <h3>{{ ('intranet_modules.' ~ item.key ~ '_title')|trans }}</h3>
+                    <p>{{ ('intranet_modules.' ~ item.key ~ '_text')|trans }}</p>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% if previews|default(false) %}<p class="workflow-caption">{{ 'preview.caption'|trans }}</p>{% endif %}
+</nav>

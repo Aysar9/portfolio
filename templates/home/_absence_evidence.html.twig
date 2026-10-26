@@ -1,0 +1,30 @@
+{# Fictional monthly days, with cumulative values 2, 2, 3. No personnel records. #}
+<figure class="workflow-figure absence-preview {{ compact|default(false) ? 'preview-compact' : '' }}">
+    <div class="workflow-window">
+        <div class="workflow-window-bar"><span>{{ 'intranet_absence.label'|trans }}</span><strong>{{ 'workflow.sample_label'|trans }}</strong></div>
+        <div class="preview-body">
+            <div class="absence-summary">
+                <div><p class="preview-eyebrow">{{ 'intranet_absence.example_profile'|trans }}</p><p class="preview-title">{{ 'intranet_absence.example_period'|trans }}</p></div>
+                <div class="absence-total"><strong>3</strong><span>{{ 'intranet_absence.total_days'|trans }}</span></div>
+            </div>
+            <div class="absence-legend"><span><i class="legend-plan" aria-hidden="true"></i>{{ 'intranet_absence.monthly'|trans }}</span><span><i class="legend-trend" aria-hidden="true"></i>{{ 'intranet_absence.cumulative'|trans }}</span></div>
+            <svg class="absence-plot" viewBox="0 0 360 140" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+                <path class="absence-grid" d="M0 10H360 M0 50H360 M0 90H360 M0 130H360" fill="none" vector-effect="non-scaling-stroke"/>
+                <rect class="absence-bar" x="40" y="50" width="40" height="80" rx="3"/>
+                <rect class="absence-bar" x="280" y="90" width="40" height="40" rx="3"/>
+                <path class="absence-trend" d="M60 50H180L300 10" fill="none" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <ol class="absence-months" aria-label="{{ 'intranet_absence.month_values'|trans }}">
+                {% for month in [
+                    {name: 'august', days: 2, total: 2},
+                    {name: 'september', days: 0, total: 2},
+                    {name: 'october', days: 1, total: 3}
+                ] %}
+                    <li><strong>{{ ('intranet_absence.' ~ month.name)|trans }}</strong><span>{{ 'intranet_absence.month_days'|trans({'%days%': month.days}) }}</span><small>{{ 'intranet_absence.running_total'|trans({'%days%': month.total}) }}</small></li>
+                {% endfor %}
+            </ol>
+            {% if not compact|default(false) %}<p class="absence-context">{{ 'intranet_absence.zero_note'|trans }}</p>{% endif %}
+        </div>
+    </div>
+    {% if not compact|default(false) %}<figcaption class="workflow-caption">{{ 'intranet_absence.caption'|trans }}</figcaption>{% endif %}
+</figure>
